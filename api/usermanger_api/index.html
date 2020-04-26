@@ -1,0 +1,1584 @@
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="web前端开发wiki">
+      
+      
+        <link rel="canonical" href="https://www.yuguoxy.com/api/usermanger_api/">
+      
+      
+        <meta name="author" content="zhousir">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.1">
+    
+    
+      
+        <title>1. 后台中心api文档 - web前端开发</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a676eddb.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.b302131d.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#546e7a">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700%7CUbuntu+Mono&display=fallback">
+        <style>body,input{font-family:"Ubuntu",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="" data-md-color-primary="blue-grey" data-md-color-accent="pink">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="">
+    <a href="https://www.yuguoxy.com/" title="web前端开发" class="md-header-nav__button md-logo" aria-label="web前端开发">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            web前端开发
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              1. 后台中心api文档
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../.." class="md-tabs__link">
+          介绍
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../vue/vue%E7%AE%80%E4%BB%8B/" class="md-tabs__link">
+          vue框架
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../web/Web%E5%AE%89%E5%85%A8/" class="md-tabs__link">
+          web案例
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          api接口文档
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://www.yuguoxy.com/" title="web前端开发" class="md-nav__button md-logo" aria-label="web前端开发">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    web前端开发
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      介绍
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="介绍" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        介绍
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="1. 课程介绍" class="md-nav__link">
+      1. 课程介绍
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      vue框架
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="vue框架" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        vue框架
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vue/vue%E7%AE%80%E4%BB%8B/" title="1. vue简介" class="md-nav__link">
+      1. vue简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vue/vue%E5%AE%89%E8%A3%85/" title="2. vue安装" class="md-nav__link">
+      2. vue安装
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      web案例
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="web案例" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        web案例
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../web/Web%E5%AE%89%E5%85%A8/" title="1. web安全" class="md-nav__link">
+      1. web安全
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../2. 一个简洁、有趣的无限下拉方案： 无限下拉方案.md" title="None" class="md-nav__link">
+      None
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      api接口文档
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="api接口文档" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        api接口文档
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        1. 后台中心api文档
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="1. 后台中心api文档" class="md-nav__link md-nav__link--active">
+      1. 后台中心api文档
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    更新记录
+  </a>
+  
+    <nav class="md-nav" aria-label="更新记录">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2020-04-23" class="md-nav__link">
+    2020-04-23 更新接口线上地址
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2020-02-21" class="md-nav__link">
+    2020-02-21 更新文档
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 用户模块
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 用户模块">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 登录接口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 退出
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    1.3 用户列表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    1.4  用户列表分页
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    1.5 删除用户
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    1.6 批量删除用户
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-id" class="md-nav__link">
+    1.7 查询用户根据id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-id" class="md-nav__link">
+    1.8 修改用户 根据id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19" class="md-nav__link">
+    1.9 添加用户
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#110" class="md-nav__link">
+    1.10 文件上传
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    1.11 动态菜单
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 日志模块
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 日志模块">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1 日志列表分页
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    2.2 添加日志
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3 删除日志
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    2.4 查询日志
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    2.5 修改日志
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 操作员模块
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 操作员模块">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1 操作员列表
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 日志回复接口
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 日志回复接口">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    4.1  查看日志回复列表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    4.2 添加日志
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    4.3 删除回复
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    4.4 修改回复
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    更新记录
+  </a>
+  
+    <nav class="md-nav" aria-label="更新记录">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2020-04-23" class="md-nav__link">
+    2020-04-23 更新接口线上地址
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2020-02-21" class="md-nav__link">
+    2020-02-21 更新文档
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 用户模块
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 用户模块">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 登录接口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 退出
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    1.3 用户列表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    1.4  用户列表分页
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    1.5 删除用户
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    1.6 批量删除用户
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-id" class="md-nav__link">
+    1.7 查询用户根据id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-id" class="md-nav__link">
+    1.8 修改用户 根据id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19" class="md-nav__link">
+    1.9 添加用户
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#110" class="md-nav__link">
+    1.10 文件上传
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    1.11 动态菜单
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 日志模块
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 日志模块">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1 日志列表分页
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    2.2 添加日志
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3 删除日志
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    2.4 查询日志
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    2.5 修改日志
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 操作员模块
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 操作员模块">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1 操作员列表
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 日志回复接口
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 日志回复接口">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    4.1  查看日志回复列表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    4.2 添加日志
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    4.3 删除回复
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    4.4 修改回复
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="api">后台中心api接口文档<a class="headerlink" href="#api" title="Permanent link">&para;</a></h1>
+<h2 id="_1">更新记录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="2020-04-23">2020-04-23 更新接口线上地址<a class="headerlink" href="#2020-04-23" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>http://www.warmtel.com  更改为: http://it.warmtel.com</p>
+</li>
+<li>
+<p>登录接口地址:  http://it.warmtel.com/api/login</p>
+</li>
+</ol>
+<h3 id="2020-02-21">2020-02-21 更新文档<a class="headerlink" href="#2020-02-21" title="Permanent link">&para;</a></h3>
+<ol>
+<li>增加回复列表接口、添加回复、删除、修改接口</li>
+<li>调整目录结构</li>
+</ol>
+<h2 id="1">1. 用户模块<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 登录接口<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>请求url地址</th>
+<th>/api/login</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>请求方式</td>
+<td>post</td>
+</tr>
+<tr>
+<td>请求参数:</td>
+<td>string : username   string: password</td>
+</tr>
+<tr>
+<td>响应数据</td>
+<td>//登录成功响应用<br/>{<br/>  "resultCode": 1,<br/>  "resultInfo": {<br/>    "m_id": 1,<br/>    "username": "zhousir",<br/>    "password": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",<br/>    "headerimg": "/upload/fileHeader-1577971828005.jpg",<br/>    "createtime": "2020-01-09T01:14:58.000Z",<br/>    "nick": "周sir"<br/>  },<br/>  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiemhvdXNpciIsIm9yaWdpbkV4cCI6MTU3ODUzODM4NTkxNywiaWF0IjoxNTc4NTM0Nzg1fQ.sJR4Zpja4s4HQVxUX5qb6Kd2766Ig6X_z5DR2z9mI04"<br/>}<br/>//登录失败响应<br/>  {<br/>       "resultCode": -1,<br/>       "resultInfo": "用户名密码出错!"<br/>    }</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12">1.2 退出<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<p>请求url: /api/logout
+请求方式: get
+请求参数： 无
+响应数据</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;resultCode&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;resultInfo&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="13">1.3 用户列表<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<p>请求url：/api/list
+请求方式: get
+请求头: author='afdaewrqwre'
+请求参数: 无
+响应数据:</p>
+<div class="highlight"><pre><span></span><code><span class="err">//成功</span>
+<span class="p">{</span>
+  <span class="nt">&quot;resultCode&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;resultInfo&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;uid&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;123&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;uid&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+      <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;123&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;uid&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+      <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;张三&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;123&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;uid&quot;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+      <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;小明&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;222&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;uid&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+      <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;王二&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;333&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+
+<span class="err">//失败</span>
+    <span class="p">{</span>
+       <span class="nt">&quot;resultCode&quot;</span><span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
+       <span class="nt">&quot;resultInfo&quot;</span><span class="p">:</span> <span class="s2">&quot;没有数据&quot;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<h3 id="14">1.4  用户列表分页<a class="headerlink" href="#14" title="Permanent link">&para;</a></h3>
+<p>请求url：/api/list_page?pageNo=1
+请求方式: get
+请求参数: pageNo=1  //当前页号
+响应数据:</p>
+<div class="highlight"><pre><span></span><code><span class="err">//成功</span>
+<span class="p">{</span>
+    <span class="err">resultCode:</span> <span class="err">1,</span>
+    <span class="err">resultInfo:</span> <span class="err">{</span>
+    <span class="err">total:</span> <span class="err">23,</span>
+    <span class="err">currentNo:</span> <span class="nt">&quot;1&quot;</span><span class="p">,</span>
+    <span class="err">pageSize:5,</span>
+    <span class="err">list:</span> <span class="err">[</span>
+        <span class="err">{</span>
+            <span class="err">uid:</span> <span class="err">83,</span>
+            <span class="err">username:</span> <span class="nt">&quot;tttt&quot;</span><span class="p">,</span>
+            <span class="err">password:</span> <span class="nt">&quot;323&quot;</span><span class="p">,</span>
+            <span class="err">headerimg:</span> <span class="nt">&quot;/upload/fileHeader-1560910892199.jpg&quot;</span>
+        <span class="p">}</span><span class="err">,</span>
+        <span class="p">{</span>
+            <span class="err">uid:</span> <span class="err">82,</span>
+            <span class="err">username:</span> <span class="nt">&quot;ff&quot;</span><span class="p">,</span>
+            <span class="err">password:</span> <span class="nt">&quot;fff&quot;</span><span class="p">,</span>
+            <span class="err">headerimg:</span> <span class="err">null</span>
+        <span class="p">}</span><span class="err">,</span>
+        <span class="p">{</span>
+            <span class="err">uid:</span> <span class="err">81,</span>
+            <span class="err">username:</span> <span class="nt">&quot;ggg&quot;</span><span class="p">,</span>
+            <span class="err">password:</span> <span class="nt">&quot;dd1&quot;</span><span class="p">,</span>
+            <span class="err">headerimg:</span> <span class="err">null</span>
+        <span class="p">}</span><span class="err">,</span>
+        <span class="p">{</span>
+            <span class="err">uid:</span> <span class="err">80,</span>
+            <span class="err">username:</span> <span class="nt">&quot;dd&quot;</span><span class="p">,</span>
+            <span class="err">password:</span> <span class="nt">&quot;ss1&quot;</span><span class="p">,</span>
+            <span class="err">headerimg:</span> <span class="nt">&quot;/upload/fileHeader-1560910600216.jpg&quot;</span>
+        <span class="p">}</span><span class="err">,</span>
+        <span class="p">{</span>
+            <span class="err">uid:</span> <span class="err">79,</span>
+            <span class="err">username:</span> <span class="nt">&quot;dd&quot;</span><span class="p">,</span>
+            <span class="err">password:</span> <span class="nt">&quot;112&quot;</span><span class="p">,</span>
+            <span class="err">headerimg:</span> <span class="err">null</span>
+        <span class="p">}</span>
+    <span class="err">]</span>
+    <span class="err">}</span>
+<span class="err">}</span>
+
+<span class="err">//失败</span>
+    <span class="p">{</span>
+       <span class="nt">&quot;resultCode&quot;</span><span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
+       <span class="nt">&quot;resultInfo&quot;</span><span class="p">:</span> <span class="s2">&quot;没有数据&quot;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<h3 id="15">1.5 删除用户<a class="headerlink" href="#15" title="Permanent link">&para;</a></h3>
+<p>请求url: /api/delete
+请求方式: get
+请求头: author='afdaewrqwre'
+请求参数: 
+    uid  //用户id
+响应数据</p>
+<div class="highlight"><pre><span></span><code><span class="err">//成功</span>
+<span class="p">{</span>
+  <span class="nt">&quot;resultCode&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;resultInfo&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span>
+<span class="p">}</span>
+<span class="err">//失败</span>
+<span class="p">{</span>
+  <span class="nt">&quot;resultCode&quot;</span><span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
+  <span class="nt">&quot;resultInfo&quot;</span><span class="p">:</span> <span class="s2">&quot;no&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="16">1.6 批量删除用户<a class="headerlink" href="#16" title="Permanent link">&para;</a></h3>
+<p>请求url: /api/deletebatch
+请求方式: post
+请求头: token
+请求参数: 
+     ids="1,2,3,4" //用户id,逗号分隔
+响应数据
+<div class="highlight"><pre><span></span><code><span class="err">//成功</span>
+<span class="p">{</span>
+  <span class="nt">&quot;resultCode&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;resultInfo&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span>
+<span class="p">}</span>
+<span class="err">//失败</span>
+<span class="p">{</span>
+  <span class="nt">&quot;resultCode&quot;</span><span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>
+  <span class="nt">&quot;resultInfo&quot;</span><span class="p">:</span> <span class="s2">&quot;no&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="17-id">1.7 查询用户根据id<a class="headerlink" href="#17-id" title="Permanent link">&para;</a></h3>
+<p>请求url: /api/find
+请求方式: get
+请求参数: 
+    id   //用户id
+响应数据
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="err">resultCode:</span> <span class="err">1,</span>
+    <span class="err">resultInfo:</span> <span class="err">{</span>
+        <span class="err">uid:</span> <span class="err">127,</span>
+        <span class="err">username:</span> <span class="nt">&quot;miss&quot;</span><span class="p">,</span>
+        <span class="err">password:</span> <span class="nt">&quot;5994471abb01112afcc18159f6cc74&quot;</span><span class="p">,</span>
+        <span class="err">headerimg:</span> <span class="nt">&quot;/upload/fileHeader-1578118354963.jpg&quot;</span>
+    <span class="p">}</span>
+<span class="err">}</span>
+</code></pre></div></p>
+<h3 id="18-id">1.8 修改用户 根据id<a class="headerlink" href="#18-id" title="Permanent link">&para;</a></h3>
+<p>请求url: /api/update
+请求方式: post
+请求参数:
+    id          //用户id
+    username    //用户名
+    psw         //密码</p>
+<p>响应数据
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;resultCode&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;resultInfo&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="19">1.9 添加用户<a class="headerlink" href="#19" title="Permanent link">&para;</a></h3>
+<p>请求url: /api/add
+请求方式: post
+请求参数
+    username  //用户名
+    psw       //密码
+    fileHeader // 头像
+响应数据
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;resultCode&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;resultInfo&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="110">1.10 文件上传<a class="headerlink" href="#110" title="Permanent link">&para;</a></h3>
+<p>请求url: /api/uploadFile
+请求方式: post
+请求参数： headerImg
+响应数据
+http://ip/abcafa.jpg</p>
+<h3 id="111">1.11 动态菜单<a class="headerlink" href="#111" title="Permanent link">&para;</a></h3>
+<p>请求url: /api/sysmenu
+请求方式:get
+请求参数:无
+响应数据
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="err">code:</span> <span class="err">200,</span>
+    <span class="err">sysmenu:</span> <span class="err">[</span>
+        <span class="err">{</span>
+        <span class="err">path:</span> <span class="nt">&quot;/main&quot;</span><span class="p">,</span>
+        <span class="err">name:</span> <span class="nt">&quot;main&quot;</span><span class="p">,</span>
+        <span class="err">component:</span> <span class="nt">&quot;Main&quot;</span><span class="p">,</span>
+        <span class="err">meta:</span> <span class="err">{</span>
+            <span class="err">requireAuth:</span> <span class="err">true,</span>
+            <span class="err">title:</span> <span class="nt">&quot;用户管理&quot;</span>
+        <span class="p">}</span><span class="err">,</span>
+        <span class="err">iconCls:</span> <span class="s2">&quot;el-icon-s-custom&quot;</span><span class="err">,</span>
+        <span class="err">hidden:</span> <span class="kc">true</span><span class="err">,</span>
+        <span class="err">children:</span> <span class="p">[</span>
+            <span class="p">{</span>
+            <span class="err">path:</span> <span class="nt">&quot;/user/list&quot;</span><span class="p">,</span>
+            <span class="err">name:</span> <span class="nt">&quot;user_list&quot;</span><span class="p">,</span>
+            <span class="err">meta:</span> <span class="err">{</span>
+            <span class="err">title:</span> <span class="nt">&quot;用户列表&quot;</span>
+            <span class="p">},</span>
+            <span class="err">iconCls:</span> <span class="s2">&quot;el-icon-s-goods&quot;</span><span class="p">,</span>
+            <span class="err">hidden:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="err">component:</span> <span class="s2">&quot;UserList&quot;</span>
+            <span class="err">}</span><span class="p">,</span>
+            <span class="p">{</span>
+            <span class="err">path:</span> <span class="nt">&quot;/user/add&quot;</span><span class="p">,</span>
+            <span class="err">name:</span> <span class="nt">&quot;user_add&quot;</span><span class="p">,</span>
+            <span class="err">meta:</span> <span class="err">{</span>
+            <span class="err">title:</span> <span class="nt">&quot;添加用户&quot;</span>
+            <span class="p">},</span>
+            <span class="err">iconCls:</span> <span class="s2">&quot;el-icon-user-solid&quot;</span><span class="p">,</span>
+            <span class="err">hidden:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="err">component:</span> <span class="s2">&quot;UserAdd&quot;</span>
+            <span class="err">}</span>
+        <span class="p">]</span>
+        <span class="err">},</span>
+        <span class="p">{</span>
+            <span class="err">path:</span> <span class="nt">&quot;/main&quot;</span><span class="p">,</span>
+            <span class="err">name:</span> <span class="nt">&quot;main&quot;</span><span class="p">,</span>
+            <span class="err">component:</span> <span class="nt">&quot;Main&quot;</span><span class="p">,</span>
+            <span class="err">iconCls:</span> <span class="nt">&quot;el-icon-s-cooperation&quot;</span><span class="p">,</span>
+            <span class="err">meta:</span> <span class="err">{</span>
+            <span class="err">requireAuth:</span> <span class="err">true,</span>
+            <span class="err">title:</span> <span class="nt">&quot;商品管理&quot;</span>
+            <span class="p">}</span><span class="err">,</span>
+            <span class="err">hidden:</span> <span class="kc">true</span><span class="err">,</span>
+            <span class="err">children:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                <span class="err">path:</span> <span class="nt">&quot;/product/list&quot;</span><span class="p">,</span>
+                <span class="err">name:</span> <span class="nt">&quot;product_list&quot;</span><span class="p">,</span>
+                <span class="err">meta:</span> <span class="err">{</span>
+                <span class="err">title:</span> <span class="nt">&quot;商品列表&quot;</span>
+                <span class="p">},</span>
+                <span class="err">iconCls:</span> <span class="s2">&quot;el-icon-s-order&quot;</span><span class="p">,</span>
+                <span class="err">hidden:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="err">component:</span> <span class="s2">&quot;ProductList&quot;</span>
+                <span class="err">}</span><span class="p">,</span>
+                <span class="p">{</span>
+                <span class="err">path:</span> <span class="nt">&quot;/product/add&quot;</span><span class="p">,</span>
+                <span class="err">name:</span> <span class="nt">&quot;product_add&quot;</span><span class="p">,</span>
+                <span class="err">meta:</span> <span class="err">{</span>
+                <span class="err">title:</span> <span class="nt">&quot;添加栏目&quot;</span>
+                <span class="p">},</span>
+                <span class="err">iconCls:</span> <span class="s2">&quot;el-icon-s-data&quot;</span><span class="p">,</span>
+                <span class="err">hidden:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="err">component:</span> <span class="s2">&quot;ProductAdd&quot;</span>
+                <span class="err">}</span>
+            <span class="p">]</span>
+        <span class="err">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/main&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;main&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;component&quot;</span><span class="p">:</span> <span class="s2">&quot;Main&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iconCls&quot;</span><span class="p">:</span> <span class="s2">&quot;el-icon-s-order&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;requireAuth&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;日志管理&quot;</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;hidden&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;children&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/log/list&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;log_list&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;日志列表&quot;</span>
+              <span class="p">},</span>
+              <span class="nt">&quot;iconCls&quot;</span><span class="p">:</span> <span class="s2">&quot;el-icon-s-claim&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;hidden&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+              <span class="nt">&quot;component&quot;</span><span class="p">:</span> <span class="s2">&quot;LogList&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/log/add&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;log_add&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;添加日志&quot;</span>
+              <span class="p">},</span>
+              <span class="nt">&quot;iconCls&quot;</span><span class="p">:</span> <span class="s2">&quot;el-icon-s-data&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;hidden&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+              <span class="nt">&quot;component&quot;</span><span class="p">:</span> <span class="s2">&quot;LogAdd&quot;</span>
+            <span class="p">}</span>
+          <span class="p">]</span>
+        <span class="p">}</span><span class="err">,</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/main&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;main&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;component&quot;</span><span class="p">:</span> <span class="s2">&quot;Main&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;iconCls&quot;</span><span class="p">:</span> <span class="s2">&quot;el-icon-s-custom&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;requireAuth&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;操作员管理&quot;</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;hidden&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;children&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+              <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/manager/list&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;manager_list&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;操作员列表&quot;</span>
+              <span class="p">},</span>
+              <span class="nt">&quot;iconCls&quot;</span><span class="p">:</span> <span class="s2">&quot;el-icon-s-claim&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;hidden&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+              <span class="nt">&quot;component&quot;</span><span class="p">:</span> <span class="s2">&quot;ManagerList&quot;</span>
+            <span class="p">}</span>
+          <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="err">]</span>
+<span class="err">}</span>
+</code></pre></div></p>
+<h2 id="2">2. 日志模块<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="21">2.1 日志列表分页<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<p>请求url：/api/log/list_page
+请求方式: get
+请求参数:  <br />
+  pageNo 当前页号 如: pageNo=1
+  name: 昵称,默认值 null 
+  startTime: 开始时间,默认值 nul
+  endTime: 结束时间,默认值 nul
+响应数据:
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;resultCode&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;resultInfo&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;total&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nt">&quot;currentNo&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;pageSize&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="nt">&quot;totalNum&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;list&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;l_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;1. 日志学习  完成; 3. js-cooike使用 ; 总结: 熟悉模块封装，图表库使用;  计划： 完成日志功能&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;logtime&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-01-09T01:34:01.000Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;m_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;zhousir&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;nick&quot;</span><span class="p">:</span> <span class="s2">&quot;周sir&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;l_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;1. 图表库echarts学习  完成; 2. 封装用户状态信和记住密码模块，3. js-cooike使用 ; 总结: 熟悉模块封装，图表库使用;  计划： 完成日志功能&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;logtime&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-01-09T01:34:01.000Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;m_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;zhousir&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;nick&quot;</span><span class="p">:</span> <span class="s2">&quot;周sir&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="22">2.2 添加日志<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<p>请求url: /api/logadd
+请求方式: post
+请求参数
+ content 日志内容 <br />
+ logtime 日志创建时间
+ mid     操作员id
+响应数据
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;resultCode&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;resultInfo&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="23">2.3 删除日志<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<p>请求url: /api/log/delete
+请求方式: get
+请求参数
+ id :  日志id
+响应数据
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;resultCode&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;resultInfo&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="24">2.4 查询日志<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
+<p>请求url: /api/log/find
+请求方式: get
+请求参数
+ id :  日志id
+响应数据
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;resultCode&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;resultInfo&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;l_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;p&gt;工作日志&lt;/p&gt;&lt;ol&gt;&lt;li&gt;完成日志管理模块开发&lt;/li&gt;,</span>
+<span class="s2">    &quot;</span><span class="err">logtime</span><span class="s2">&quot;: &quot;</span><span class="mi">2020-01-09</span><span class="err">T</span><span class="mi">05</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mf">32.000</span><span class="err">Z&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="25">2.5 修改日志<a class="headerlink" href="#25" title="Permanent link">&para;</a></h3>
+<p>请求url: /api/log/update
+请求方式: post
+请求参数
+ id :  日志id
+ content: 日志内容
+响应数据
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;resultCode&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;resultInfo&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="3">3. 操作员模块<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 操作员列表<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<p>请求url: http://localhost:8088/api/manager/list
+请求方式: get
+请求参数: 无
+响应数据
+<div class="highlight"><pre><span></span><code>  <span class="p">{</span>
+  <span class="nt">&quot;resultCode&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;resultInfo&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;m_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;zhousir&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;nick&quot;</span><span class="p">:</span> <span class="s2">&quot;周sir&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;createtime&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-01-09T01:14:58.000Z&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;headerimg&quot;</span><span class="p">:</span> <span class="s2">&quot;/upload/fileHeader-1577971828005.jpg&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;m_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;qdx&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;nick&quot;</span><span class="p">:</span> <span class="s2">&quot;屈鼎雄&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;createtime&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-01-09T01:15:42.000Z&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;headerimg&quot;</span><span class="p">:</span> <span class="s2">&quot;/upload/fileHeader-1578011746557.jpg&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;m_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;py&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;nick&quot;</span><span class="p">:</span> <span class="s2">&quot;彭宇&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;createtime&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-01-09T01:16:11.000Z&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;headerimg&quot;</span><span class="p">:</span> <span class="s2">&quot;/upload/fileHeader-1578313426240.jpg&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="4">4. 日志回复接口<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h3 id="41">4.1  查看日志回复列表<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<p>请求url: /api/reply/list
+请求方式: get
+请求参数: logId  日志ID
+响应数据
+<div class="highlight"><pre><span></span><code>  <span class="p">{</span>
+  <span class="nt">&quot;resultCode&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;resultInfo&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;收到消息，按计划进行&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;reply_time&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-02-21T08:42:05.000Z&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;nick&quot;</span><span class="p">:</span> <span class="s2">&quot;周sir&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;zhousir&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;headerimg&quot;</span><span class="p">:</span> <span class="s2">&quot;/upload/fileHeader-1578301102685.jpg&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;好的&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;reply_time&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-02-21T08:42:31.000Z&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;nick&quot;</span><span class="p">:</span> <span class="s2">&quot;彭宇&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;py&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;headerimg&quot;</span><span class="p">:</span> <span class="s2">&quot;/upload/fileHeader-1578313426240.jpg&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;好的&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;reply_time&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-02-21T08:42:57.000Z&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;nick&quot;</span><span class="p">:</span> <span class="s2">&quot;屈鼎雄&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;qdx&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;headerimg&quot;</span><span class="p">:</span> <span class="s2">&quot;/upload/fileHeader-1578045837043.jpg&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="42">4.2 添加日志<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<p>请求url: /api/reply/add
+请求方式: post
+请求参数
+ message 回复内容 <br />
+ log_id  回复日志id
+ m_id 回复用户ID
+响应数据
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;resultCode&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;resultInfo&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="43">4.3 删除回复<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
+<p>请求url: /api/reply/delete
+请求方式: get
+请求参数
+ id :  回复id
+响应数据</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;resultCode&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;resultInfo&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="44">4.4 修改回复<a class="headerlink" href="#44" title="Permanent link">&para;</a></h3>
+<p>请求url: /api/reply/update
+请求方式: post
+请求参数
+ id :  日志id
+ message: 日志内容
+响应数据
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;resultCode&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;resultInfo&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="">
+        
+          <a href="../../web/Web%E5%AE%89%E5%85%A8/" title="1. web安全" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                1. web安全
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © 2020 雨果学院wiki
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,699 @@
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="web前端开发wiki">
+      
+      
+        <link rel="canonical" href="https://www.yuguoxy.com/web/Web%E5%AE%89%E5%85%A8/">
+      
+      
+        <meta name="author" content="zhousir">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.1">
+    
+    
+      
+        <title>1. web安全 - web前端开发</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a676eddb.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.b302131d.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#546e7a">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700%7CUbuntu+Mono&display=fallback">
+        <style>body,input{font-family:"Ubuntu",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="" data-md-color-primary="blue-grey" data-md-color-accent="pink">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#web" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="">
+    <a href="https://www.yuguoxy.com/" title="web前端开发" class="md-header-nav__button md-logo" aria-label="web前端开发">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            web前端开发
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              1. web安全
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../.." class="md-tabs__link">
+          介绍
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../vue/vue%E7%AE%80%E4%BB%8B/" class="md-tabs__link">
+          vue框架
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          web案例
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../api/usermanger_api/" class="md-tabs__link">
+          api接口文档
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://www.yuguoxy.com/" title="web前端开发" class="md-nav__button md-logo" aria-label="web前端开发">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    web前端开发
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      介绍
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="介绍" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        介绍
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="1. 课程介绍" class="md-nav__link">
+      1. 课程介绍
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      vue框架
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="vue框架" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        vue框架
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vue/vue%E7%AE%80%E4%BB%8B/" title="1. vue简介" class="md-nav__link">
+      1. vue简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vue/vue%E5%AE%89%E8%A3%85/" title="2. vue安装" class="md-nav__link">
+      2. vue安装
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      web案例
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="web案例" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        web案例
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="1. web安全" class="md-nav__link md-nav__link--active">
+      1. web安全
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../2. 一个简洁、有趣的无限下拉方案： 无限下拉方案.md" title="None" class="md-nav__link">
+      None
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      api接口文档
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="api接口文档" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        api接口文档
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/usermanger_api/" title="1. 后台中心api文档" class="md-nav__link">
+      1. 后台中心api文档
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="web">Web安全及防御<a class="headerlink" href="#web" title="Permanent link">&para;</a></h1>
+<h1 id="_1">前言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>其实, 前端的安全并没有很多, 不过知道了, 起码后端兄弟不会那么累了。
+本文主要讨论以下几种攻击方式 :</p>
+<ul>
+<li><strong>XSS方式</strong></li>
+<li><strong>CSRF方式</strong></li>
+<li><strong>点击劫持</strong></li>
+</ul>
+<p>希望大家在阅读完文本之后, 能够很好地回答以下的几个问题:</p>
+<ul>
+<li><strong>前端的攻击方式有哪些?</strong></li>
+<li><strong>什么是XSS方式? XSS攻击有几种类型?如何防范XSS攻击?</strong></li>
+<li><strong>什么是CSRF攻击?如何防范CSRF攻击?</strong></li>
+<li><strong>如何检测网站是否安全?</strong></li>
+</ul>
+<h2 id="1-xss">1. XSS方式<a class="headerlink" href="#1-xss" title="Permanent link">&para;</a></h2>
+<p>XSS(Cross-Site-Scripting),跨站脚本攻击是一种代码注入攻击。攻击者在目标网站上注入恶意代码,当被攻击者登录网站时就会执行这些恶意代码, 这些脚本可以读取 cookie ,session tokens , 或者其他敏感的网站消息,对用户进行钓鱼欺诈,甚至发起蠕虫攻击等。</p>
+<p><strong>XSS的本质:恶意代码未经过滤,与网站正常的代码混在一起;浏览器无法分辨哪些脚本是可信的,导致恶意脚本被执行。由于直接在用户的终端执行,恶意代码能够直接获取用户的信息,利用这些信息冒充用户向网站发起攻击</strong></p>
+<p>XSS的分类:</p>
+<ul>
+<li>存储型</li>
+<li>反射型</li>
+<li>DOM 型</li>
+</ul>
+<h3 id="11-xss">1.1 反射型XSS<a class="headerlink" href="#11-xss" title="Permanent link">&para;</a></h3>
+<p>当用户点击一个恶意链接, 或者提交一个表单, 或者进入一个恶意网站时, 注入脚本进入被攻击者的网站。Web 服务器将注入脚本,比如一个错误信息, 搜索结果等 , 未进行过滤直接返回到用户的浏览器上。</p>
+<p>反射型XSS的攻击步骤:</p>
+<ul>
+<li>1.攻击者构造出特殊的URL, 其中包含恶意代码</li>
+<li>2.用户打开带有恶意代码的URL时, 网站服务端将恶意代码从 URL中取出, 拼接在 HTML中返回给浏览器</li>
+<li>3.用户浏览器接收到响应后解析执行, 混在其中的恶意代码也被执行。</li>
+<li>4.恶意代码窃取用户数据并发送到攻击者的网站, 或者冒充用户的行为, 调用目标网站接口执行攻击者指定的操作。</li>
+</ul>
+<p>反射型 XSS 漏洞常见于 URL 传递参数的功能 , 如网站搜索 , 跳转等。由于需要用户主动打开恶意的 URL 才能生效 , 攻击者往往会结合多种手段诱导用户点击</p>
+<p>POST 的内容也可以触发反射型 XSS , 只不过其触发条件比较苛刻 (需要构造表单提交页面 , 并引导用户点击),所以非常少见。</p>
+<p><strong>话不多说 , 我们来举个例子</strong></p>
+<p><img alt="img" src="https://user-gold-cdn.xitu.io/2020/3/21/170fc3ec07a4518e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" /></p>
+<div class="highlight"><pre><span></span><code><span class="c1">//前端代码</span>
+<span class="c1">// index.html</span>
+<span class="c1">// 由于必须诱导用户点击,所以可能是这样的</span>
+<span class="o">&lt;</span><span class="nx">button</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;btn&quot;</span> <span class="nx">onclick</span><span class="o">=</span><span class="s2">&quot;test()&quot;</span><span class="o">&gt;</span>
+    <span class="c1">//这是一张很好看的图片</span>
+    <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1136880418,2628684495&amp;fm=15&amp;gp=0.jpg&quot;</span> <span class="nx">alt</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+    <span class="kd">var</span> <span class="nx">test</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 构造出的特殊的 url , 其中包含恶意代码</span>
+    <span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="sb">`/welcome?type=&lt;script&gt;alert(&#39;恶意内容&#39;)&lt;</span><span class="err">\</span><span class="sb">/script&gt;`</span><span class="p">;</span>
+    <span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">url</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">&lt;</span><span class="err">/script&gt;</span>
+
+<span class="c1">// 后端代码</span>
+<span class="c1">// server.js</span>
+<span class="kr">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="kr">static</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">)))</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/welcome&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 把恶意代码当做字符串, 传输回浏览器</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">type</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
+<span class="p">})</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="p">()=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;server is running at port 4000&#39;</span><span class="p">)</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p><strong>如果不希望被前端拿到 cookie, 后端可以设置 httpOnly (不过这个不是 XSS 的解决方案 , 只能降低受损范围)</strong></p>
+<h4 id="xss">如何防范反射型 XSS攻击?<a class="headerlink" href="#xss" title="Permanent link">&para;</a></h4>
+<p><strong>对字符串进行编码</strong>
+对url的查询参数进行转义后再输出到页面</p>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/welcome&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//对查询参数进行编码，避免反射型 XSS攻击</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span> 
+<span class="p">})</span>
+</code></pre></div>
+
+<p><strong>总结:简单来说,前端向后端发送GET请求数据,后端返回结果之前,必须先对url查询参数进行编码再输出到页面</strong></p>
+<h3 id="12-domxss">1.2 DOM型XSS<a class="headerlink" href="#12-domxss" title="Permanent link">&para;</a></h3>
+<p>DOM型 XSS 攻击 , 实际上就是前端 javaScript 代码不够严谨 , 把不可信的内容插入到了页面 。在使用 .innerHTML , .outerHTML , appendChild , document.write()等 API 时要特别小心 , <strong>不要把不可信的数据作为为 HTML 插入到页面上</strong> , 尽量使用 .innerText , .textContent , setAttribute()等。</p>
+<h4 id="domxss">DOM型XSS 的攻击步骤:<a class="headerlink" href="#domxss" title="Permanent link">&para;</a></h4>
+<ul>
+<li>1.攻击者构造出特殊数据 , 其中包含恶意代码</li>
+<li>2.用户浏览器执行恶意代码</li>
+<li>恶意代码窃取用户数据并发送到攻击者的网站 , 或者冒充用户的行为 , 调用目标网站接口执行攻击者指定的操作。</li>
+</ul>
+<h4 id="domxss_1">如何防范 DOM型XSS攻击<a class="headerlink" href="#domxss_1" title="Permanent link">&para;</a></h4>
+<p>防范 DOM 型 XSS攻击的核心就是对输入内容进行转义 (DOM 中的内联事件监听器和链接跳转都能把字符串作为代码运行, 需要对其内容进行检查)</p>
+<ol>
+<li>
+<p>对于 url 链接(例如图片的src属性), 那么直接使用 encodeURIComponent来转义</p>
+</li>
+<li>
+<p>非 url , 我们可以这样进行编码</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code> <span class="kd">function</span> <span class="nx">encodeHtml</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">return</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&quot;/g</span><span class="p">,</span> <span class="s1">&#39;&amp;quot;&#39;</span><span class="p">)</span>
+             <span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&#39;/g</span><span class="p">,</span> <span class="s1">&#39;&amp;apos;&#39;</span><span class="p">)</span>
+             <span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&lt;/g</span><span class="p">,</span> <span class="s1">&#39;&amp;lt;&#39;</span><span class="p">)</span>
+             <span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&gt;/g</span><span class="p">,</span> <span class="s1">&#39;&amp;gt;&#39;</span><span class="p">);</span>
+ <span class="p">}</span>
+</code></pre></div>
+
+<p>DOM型 XSS攻击中 , 取出和执行恶意代码由浏览器端完成 , 属于前端 javaScript 自身的安全漏洞</p>
+<p><strong>再举个例子</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1">//前端</span>
+<span class="o">&lt;</span><span class="nx">form</span> <span class="nx">onsubmit</span><span class="o">=</span><span class="s2">&quot;return false&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;form-group&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">label</span> <span class="k">for</span><span class="o">=</span><span class="s2">&quot;comments&quot;</span><span class="o">&gt;</span><span class="nx">商品评论</span><span class="o">&lt;</span><span class="err">/label&gt;</span>
+        <span class="o">&lt;</span><span class="nx">input</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;form-control&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;comments&quot;</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="err">/div&gt;</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;form-group&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">input</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;btn btn-danger&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;attck&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;会被攻击&quot;</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">input</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;btn btn-primary&quot;</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;security&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;我很安全&quot;</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="o">&lt;</span><span class="err">/form&gt;</span>
+<span class="o">&lt;</span><span class="nx">form</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">ul</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;list-group&quot;</span><span class="o">&gt;&lt;</span><span class="err">/ul&gt;</span>
+<span class="o">&lt;</span><span class="err">/form&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;/node_modules/jquery/dist/jquery.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+    <span class="c1">// DOM型 XSS 攻击</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#attck&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">commend</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#comments&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">commend</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">trim</span><span class="p">(</span><span class="nx">commend</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.list-group&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="sb">`&lt;li class=&quot;list-group-item&quot;&gt;</span><span class="si">${</span><span class="nx">commend</span><span class="si">}</span><span class="sb">&lt;/li&gt;`</span><span class="p">);</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#comments&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
+    <span class="c1">// HTML 编码</span>
+    <span class="kd">function</span> <span class="nx">encodeHtml</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&quot;/g</span><span class="p">,</span> <span class="s1">&#39;&amp;quot;&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&#39;/g</span><span class="p">,</span> <span class="s1">&#39;&amp;apos;&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&lt;/g</span><span class="p">,</span> <span class="s1">&#39;&amp;lt;&#39;</span><span class="p">)</span>
+        <span class="nx">replace</span><span class="p">(</span><span class="sr">/&gt;/g</span><span class="p">,</span> <span class="s1">&#39;&amp;gt;&#39;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#security&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">commend</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#comments&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">commend</span><span class="p">)</span>
+        <span class="c1">// 对内容进行转义</span>
+        <span class="c1">// 如果是url 地址 , 可以直接使用 encodeURIComponent 进行转义</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">trim</span><span class="p">(</span><span class="nx">commend</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.list-group&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="sb">`&lt;li class=&quot;list-group-item&quot;&gt;</span><span class="si">${</span><span class="nx">encodeHtml</span><span class="p">(</span><span class="nx">commend</span><span class="p">)</span><span class="si">}</span><span class="sb">&lt;/li&gt;`</span><span class="p">);</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#comments&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
+<span class="o">&lt;</span><span class="err">/script&gt;</span>
+</code></pre></div>
+
+<p><strong>总结:就是不要相信用户输入的内容,如果非要在页面上插入 HTML,就必须先转义再插入。对于URL可以使用encodeURIComponent,对于非URL可以使用上面的方法</strong></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="">
+        
+          <a href="../../vue/vue%E5%AE%89%E8%A3%85/" title="2. vue安装" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                2. vue安装
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../api/usermanger_api/" title="1. 后台中心api文档" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                1. 后台中心api文档
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © 2020 雨果学院wiki
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
