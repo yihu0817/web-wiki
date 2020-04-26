@@ -21,7 +21,7 @@ nav:
       - 2. vue安装: vue/vue安装.md
   - web案例:
       - 1. web安全: web/Web安全.md
-      - 2. 一个简洁、有趣的无限下拉方案： 无限下拉方案.md
+      - 2. 无限下拉方案: web/无限下拉方案.md
   - api接口文档:
       - 1. 后台中心api文档: api/usermanger_api.md
 
