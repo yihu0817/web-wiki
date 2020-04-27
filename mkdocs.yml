@@ -19,7 +19,7 @@ nav:
   - vue框架:
       - 1. vue简介: vue/vue简介.md
       - 2. vue安装: vue/vue安装.md
-  - web案例:
+  - web技术:
       - 1. web安全: web/Web安全.md
       - 2. 无限下拉方案: web/无限下拉方案.md
       - 3. css变量教程: web/css变量教程.md
