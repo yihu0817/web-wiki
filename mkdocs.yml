@@ -22,6 +22,7 @@ nav:
   - web案例:
       - 1. web安全: web/Web安全.md
       - 2. 无限下拉方案: web/无限下拉方案.md
+      - 3. css变量教程: web/css变量教程.md
   - api接口文档:
       - 1. 后台中心api文档: api/usermanger_api.md
 
