@@ -1,0 +1,1729 @@
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="web前端开发wiki">
+      
+      
+        <link rel="canonical" href="https://www.yuguoxy.com/web/%E4%BD%BF%E7%94%A8Flexible%E5%AE%9E%E7%8E%B0%E6%89%8B%E6%B7%98H5%E9%A1%B5%E9%9D%A2%E7%9A%84%E7%BB%88%E7%AB%AF%E9%80%82%E9%85%8D/">
+      
+      
+        <meta name="author" content="zhousir">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.1">
+    
+    
+      
+        <title>3. 手淘H5页面的终端适配 - web前端开发</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a676eddb.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.b302131d.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#546e7a">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700%7CUbuntu+Mono&display=fallback">
+        <style>body,input{font-family:"Ubuntu",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../assets/css/simplelightbox.min.css">
+    
+      <link rel="stylesheet" href="../../assets/css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="" data-md-color-primary="blue-grey" data-md-color-accent="pink">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#flexibleh5" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="">
+    <a href="https://www.yuguoxy.com/" title="web前端开发" class="md-header-nav__button md-logo" aria-label="web前端开发">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            web前端开发
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              3. 手淘H5页面的终端适配
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../.." class="md-tabs__link">
+          介绍
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tools/markdown%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="md-tabs__link">
+          markdown&git
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../vue/vue%E7%AE%80%E4%BB%8B/" class="md-tabs__link">
+          vue框架
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Web%E5%AE%89%E5%85%A8/" class="md-tabs__link">
+          web技术
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../%E9%A1%B5%E9%9D%A2%E5%8D%95%E4%BD%8D%E5%B0%8F%E7%BB%93/" class="md-tabs__link md-tabs__link--active">
+          屏幕适配方案
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../api/usermanger_api/" class="md-tabs__link">
+          api接口文档
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://www.yuguoxy.com/" title="web前端开发" class="md-nav__button md-logo" aria-label="web前端开发">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    web前端开发
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      介绍
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="介绍" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        介绍
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="1. 平台介绍" class="md-nav__link">
+      1. 平台介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/00web%E5%89%8D%E7%AB%AF%E4%BB%8B%E7%BB%8D/" title="2. web前端介绍" class="md-nav__link">
+      2. web前端介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/01html%E5%9F%BA%E7%A1%80/" title="3. html基础" class="md-nav__link">
+      3. html基础
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      markdown&git
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="markdown&git" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        markdown&git
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tools/markdown%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" title="1. markdown使用教程" class="md-nav__link">
+      1. markdown使用教程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tools/git%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" title="2. git使用教程" class="md-nav__link">
+      2. git使用教程
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      vue框架
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="vue框架" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        vue框架
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vue/vue%E7%AE%80%E4%BB%8B/" title="1. vue简介" class="md-nav__link">
+      1. vue简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vue/vue%E5%AE%89%E8%A3%85/" title="2. vue安装" class="md-nav__link">
+      2. vue安装
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      web技术
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="web技术" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        web技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Web%E5%AE%89%E5%85%A8/" title="1. web安全" class="md-nav__link">
+      1. web安全
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E6%97%A0%E9%99%90%E4%B8%8B%E6%8B%89%E6%96%B9%E6%A1%88/" title="2. 无限下拉方案" class="md-nav__link">
+      2. 无限下拉方案
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../css%E5%8F%98%E9%87%8F%E6%95%99%E7%A8%8B/" title="3. css变量" class="md-nav__link">
+      3. css变量
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      屏幕适配方案
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="屏幕适配方案" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        屏幕适配方案
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E9%A1%B5%E9%9D%A2%E5%8D%95%E4%BD%8D%E5%B0%8F%E7%BB%93/" title="1. pt单位" class="md-nav__link">
+      1. pt单位
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rem%E5%8D%95%E4%BD%8D%E8%87%AA%E9%80%82%E5%BA%94%E5%B1%8F%E5%B9%95/" title="2. rem单位详解" class="md-nav__link">
+      2. rem单位详解
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        3. 手淘H5页面的终端适配
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="3. 手淘H5页面的终端适配" class="md-nav__link md-nav__link--active">
+      3. 手淘H5页面的终端适配
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    目标
+  </a>
+  
+    <nav class="md-nav" aria-label="目标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    DEMO
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    痛点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    手淘团队适配协作模式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    前端开发完成终端适配方案
+  </a>
+  
+    <nav class="md-nav" aria-label="前端开发完成终端适配方案">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    一些基本概念
+  </a>
+  
+    <nav class="md-nav" aria-label="一些基本概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#viewport" class="md-nav__link">
+    视窗 viewport
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-pixel" class="md-nav__link">
+    物理像素(physical pixel)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#density-independent-pixel" class="md-nav__link">
+    设备独立像素(density-independent pixel)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css" class="md-nav__link">
+    CSS像素
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    屏幕密度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-pixel-ratio" class="md-nav__link">
+    设备像素比(device pixel ratio)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta" class="md-nav__link">
+    meta标签
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cssrem" class="md-nav__link">
+    CSS单位rem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    前端实现方案
+  </a>
+  
+    <nav class="md-nav" aria-label="前端实现方案">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lib-flexible" class="md-nav__link">
+    lib-flexible是什么？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    使用方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flexible" class="md-nav__link">
+    flexible的实质
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    案例实战
+  </a>
+  
+    <nav class="md-nav" aria-label="案例实战">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html" class="md-nav__link">
+    创建HTML模板
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pxrem" class="md-nav__link">
+    把视觉稿中的px转换成rem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    如何快速计算
+  </a>
+  
+    <nav class="md-nav" aria-label="如何快速计算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cssrem_1" class="md-nav__link">
+    CSSREM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css_1" class="md-nav__link">
+    CSS处理器
+  </a>
+  
+    <nav class="md-nav" aria-label="CSS处理器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sass" class="md-nav__link">
+    Sass
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postcsspx2rem" class="md-nav__link">
+    PostCSS(px2rem)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rem" class="md-nav__link">
+    文本字号不建议使用rem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css_2" class="md-nav__link">
+    CSS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    效果
+  </a>
+  
+    <nav class="md-nav" aria-label="效果">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iphone4" class="md-nav__link">
+    iPhone4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iphone6" class="md-nav__link">
+    iPhone6+
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E6%9C%80%E6%96%B0%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D%E6%96%B9%E6%A1%88/" title="4. 最新移动端适配方案" class="md-nav__link">
+      4. 最新移动端适配方案
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../px%E8%BD%ACvw%E5%92%8Cvh%E7%9A%84%E5%B7%A5%E5%85%B7/" title="5. px转vw和vh的工具" class="md-nav__link">
+      5. px转vw和vh的工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E4%BD%A0%E4%BA%86%E8%A7%A3%E8%BF%87%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D%E5%90%97/" title="6. 你了解过移动端适配吗" class="md-nav__link">
+      6. 你了解过移动端适配吗
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      api接口文档
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="api接口文档" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        api接口文档
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/usermanger_api/" title="1. 后台中心api文档" class="md-nav__link">
+      1. 后台中心api文档
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    目标
+  </a>
+  
+    <nav class="md-nav" aria-label="目标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    DEMO
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    痛点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    手淘团队适配协作模式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    前端开发完成终端适配方案
+  </a>
+  
+    <nav class="md-nav" aria-label="前端开发完成终端适配方案">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    一些基本概念
+  </a>
+  
+    <nav class="md-nav" aria-label="一些基本概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#viewport" class="md-nav__link">
+    视窗 viewport
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-pixel" class="md-nav__link">
+    物理像素(physical pixel)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#density-independent-pixel" class="md-nav__link">
+    设备独立像素(density-independent pixel)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css" class="md-nav__link">
+    CSS像素
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    屏幕密度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-pixel-ratio" class="md-nav__link">
+    设备像素比(device pixel ratio)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta" class="md-nav__link">
+    meta标签
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cssrem" class="md-nav__link">
+    CSS单位rem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    前端实现方案
+  </a>
+  
+    <nav class="md-nav" aria-label="前端实现方案">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lib-flexible" class="md-nav__link">
+    lib-flexible是什么？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    使用方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flexible" class="md-nav__link">
+    flexible的实质
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    案例实战
+  </a>
+  
+    <nav class="md-nav" aria-label="案例实战">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html" class="md-nav__link">
+    创建HTML模板
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pxrem" class="md-nav__link">
+    把视觉稿中的px转换成rem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    如何快速计算
+  </a>
+  
+    <nav class="md-nav" aria-label="如何快速计算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cssrem_1" class="md-nav__link">
+    CSSREM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css_1" class="md-nav__link">
+    CSS处理器
+  </a>
+  
+    <nav class="md-nav" aria-label="CSS处理器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sass" class="md-nav__link">
+    Sass
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postcsspx2rem" class="md-nav__link">
+    PostCSS(px2rem)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rem" class="md-nav__link">
+    文本字号不建议使用rem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css_2" class="md-nav__link">
+    CSS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    效果
+  </a>
+  
+    <nav class="md-nav" aria-label="效果">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iphone4" class="md-nav__link">
+    iPhone4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iphone6" class="md-nav__link">
+    iPhone6+
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="flexibleh5">使用Flexible实现手淘H5页面的终端适配<a class="headerlink" href="#flexibleh5" title="Permanent link">&para;</a></h1>
+<p>曾几何时为了兼容IE低版本浏览器而头痛，以为到Mobile时代可以跟这些麻烦说拜拜。可没想到到了移动时代，为了处理各终端的适配而乱了手脚。对于混迹各社区的偶，时常发现大家拿手机淘宝的H5页面做讨论——<strong>手淘的H5页面是如何实现多终端的适配</strong>？</p>
+<p>那么趁此**Amfe阿里无线前端团队双11技术连载**之际，用一个实战案例来告诉大家，手淘的H5页面是如何实现多终端适配的，希望这篇文章对大家在Mobile的世界中能过得更轻松。</p>
+<h2 id="_1">目标<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>拿一个双11的Mobile页面来做案例，比如你实现一个类似下图的一个H5页面：</p>
+<p><img alt="Flexible实现手淘H5页面的终端适配" src="../../images/rem-1.jpg" /></p>
+<p>目标很清晰，就是做一个这样的H5页面。</p>
+<h3 id="demo"><a href="http://huodong.m.taobao.com/act/yibo.html">DEMO</a><a class="headerlink" href="#demo" title="Permanent link">&para;</a></h3>
+<p>请用手机扫下面的二维码</p>
+<p><a href="http://huodong.m.taobao.com/act/yibo.html"><img alt="DEMO" src="http://www.w3cplus.com/sites/default/files/blogs/2015/1511/yiboqr.png" /></a></p>
+<h2 id="_2">痛点<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>虽然H5的页面与PC的Web页面相比简单了不少，但让我们头痛的事情是要想尽办法让页面能适配众多不同的终端设备。看看下图你就会知道，这是多么痛苦的一件事情：</p>
+<p><a href="https://design.google.com/devices/"><img alt="Flexible实现手淘H5页面的终端适配" src="../../images/rem-4.png" /></a></p>
+<p>点击<a href="https://design.google.com/devices/">这里</a>查看更多终端设备的参数。</p>
+<p>再来看看手淘H5要适配的终端设备数据：</p>
+<p><img alt="Flexible实现手淘H5页面的终端适配" src="../../images/rem-7.png" /></p>
+<p>看到这些数据，是否死的心都有了，或者说为此捏了一把汗出来。</p>
+<h2 id="_3">手淘团队适配协作模式<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>早期移动端开发，对于终端设备适配问题只属于Android系列，只不过很多设计师常常忽略Android适配问题，只出一套iOS平台设计稿。但随着iPhone6，iPhone6+的出现，从此终端适配问题不再是Android系列了，也从这个时候让移动端适配全面进入到“杂屏”时代。</p>
+<p><img alt="Flexible实现手淘H5页面的终端适配" src="../../images/rem-11.png" /></p>
+<p><em>上图来自于<a href="http://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions">paintcodeapp.com</a></em></p>
+<p>为了应对这多么的终端设备，设计师和前端开发之间又应该采用什么协作模式？或许大家对此也非常感兴趣。</p>
+<p>而整个手淘设计师和前端开发的适配协作基本思路是：</p>
+<ul>
+<li>选择一种尺寸作为设计和开发基准</li>
+<li>定义一套适配规则，自动适配剩下的两种尺寸(其实不仅这两种，你懂的)</li>
+<li>特殊适配效果给出设计效果</li>
+</ul>
+<p>还是上一张图吧，因为一图胜过千言万语：</p>
+<p><img alt="Flexible实现手淘H5页面的终端适配" src="../../images/rem-6.jpg" /></p>
+<p>在此也不做更多的阐述。在手淘的设计师和前端开发协作过程中：<strong>手淘设计师常选择iPhone6作为基准设计尺寸，交付给前端的设计尺寸是按<code>750px \* 1334px</code>为准(高度会随着内容多少而改变)。前端开发人员通过一套适配规则自动适配到其他的尺寸。</strong></p>
+<p>根据上面所说的，设计师给我们的设计图是一个<code>750px * 1600px</code>的页面：</p>
+<p><img alt="Flexible实现手淘H5页面的终端适配" src="../../images/rem-3.jpg" /></p>
+<h2 id="_4">前端开发完成终端适配方案<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>拿到设计师给的设计图之后，剩下的事情是前端开发人员的事了。而手淘经过多年的摸索和实战，总结了一套移动端适配的方案——<strong><a href="https://github.com/amfe/lib-flexible">flexible方案</a></strong>。</p>
+<p>这种方案具体在实际开发中如何使用，暂时先卖个关子，在继续详细的开发实施之前，我们要先了解一些基本概念。</p>
+<h3 id="_5">一些基本概念<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>在进行具体实战之前，首先得了解下面这些基本概念(术语)：</p>
+<h4 id="viewport">视窗 viewport<a class="headerlink" href="#viewport" title="Permanent link">&para;</a></h4>
+<p>简单的理解，viewport是严格等于浏览器的窗口。在桌面浏览器中，viewport就是浏览器窗口的宽度高度。但在移动端设备上就有点复杂。</p>
+<p>移动端的viewport太窄，为了能更好为CSS布局服务，所以提供了两个viewport:虚拟的viewportvisualviewport和布局的viewportlayoutviewport。</p>
+<p>George Cummins在Stack Overflow上<a href="http://stackoverflow.com/questions/6333927/difference-between-visual-viewport-and-layout-viewport">对这两个基本概念做了详细的解释</a>。</p>
+<p>而事实上viewport是一个很复杂的知识点，上面的简单描述可能无法帮助你更好的理解viewport，而你又想对此做更深的了解，可以阅读<a href="http://www.w3cplus.com/css/viewports.html">PPK写的相关教程</a>。</p>
+<h4 id="physical-pixel">物理像素(physical pixel)<a class="headerlink" href="#physical-pixel" title="Permanent link">&para;</a></h4>
+<p>物理像素又被称为设备像素，他是显示设备中一个最微小的物理部件。每个像素可以根据操作系统设置自己的颜色和亮度。正是这些设备像素的微小距离欺骗了我们肉眼看到的图像效果。</p>
+<p><img alt="Flexible实现手淘H5页面的终端适配" src="../../images/retina-web-1.jpg" /></p>
+<h4 id="density-independent-pixel">设备独立像素(density-independent pixel)<a class="headerlink" href="#density-independent-pixel" title="Permanent link">&para;</a></h4>
+<p>设备独立像素也称为密度无关像素，可以认为是计算机坐标系统中的一个点，这个点代表一个可以由程序使用的虚拟像素(比如说CSS像素)，然后由相关系统转换为物理像素。</p>
+<h4 id="css">CSS像素<a class="headerlink" href="#css" title="Permanent link">&para;</a></h4>
+<p>CSS像素是一个抽像的单位，主要使用在浏览器上，用来精确度量Web页面上的内容。一般情况之下，CSS像素称为与设备无关的像素(device-independent pixel)，简称DIPs。</p>
+<h4 id="_6">屏幕密度<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>屏幕密度是指一个设备表面上存在的像素数量，它通常以每英寸有多少像素来计算(PPI)。</p>
+<h4 id="device-pixel-ratio">设备像素比(device pixel ratio)<a class="headerlink" href="#device-pixel-ratio" title="Permanent link">&para;</a></h4>
+<p>设备像素比简称为dpr，其定义了物理像素和设备独立像素的对应关系。它的值可以按下面的公式计算得到：</p>
+<div class="highlight"><pre><span></span><code>设备像素比 ＝ 物理像素 / 设备独立像素
+</code></pre></div>
+
+<p>在JavaScript中，可以通过<code>window.devicePixelRatio</code>获取到当前设备的dpr。而在CSS中，可以通过<code>-webkit-device-pixel-ratio</code>，<code>-webkit-min-device-pixel-ratio</code>和 <code>-webkit-max-device-pixel-ratio</code>进行媒体查询，对不同dpr的设备，做一些样式适配(这里只针对webkit内核的浏览器和webview)。</p>
+<p>dip或dp,（device independent pixels，设备独立像素）与屏幕密度有关。dip可以用来辅助区分视网膜设备还是非视网膜设备。</p>
+<p>缩合上述的几个概念，用一张图来解释：</p>
+<p><a href="https://camo.githubusercontent.com/a407f9dc63ca26a60ade9ed8830713c14f6132d8/687474703a2f2f7777772e773363706c75732e636f6d2f73697465732f64656661756c742f66696c65732f626c6f67732f3230313231322f726574696e612d7765622d332e6a7067"><img alt="Flexible实现手淘H5页面的终端适配" src="../images/687474703a2f2f7777772e773363706c75732e636f6d2f73697465732f64656661756c742f66696c65732f626c6f67732f3230313231322f726574696e612d7765622d332e6a7067" /></a></p>
+<p>众所周知，iPhone6的设备宽度和高度为<code>375pt * 667pt</code>,可以理解为设备的独立像素；而其dpr为<code>2</code>，根据上面公式，我们可以很轻松得知其物理像素为<code>750pt * 1334pt</code>。</p>
+<p>如下图所示，某元素的CSS样式：</p>
+<div class="highlight"><pre><span></span><code>width: 2px;
+height: 2px；
+</code></pre></div>
+
+<p>在不同的屏幕上，CSS像素所呈现的物理尺寸是一致的，而不同的是CSS像素所对应的物理像素具数是不一致的。在普通屏幕下<code>1</code>个CSS像素对应<code>1</code>个物理像素，而在Retina屏幕下，<code>1</code>个CSS像素对应的却是<code>4</code>个物理像素。</p>
+<p>有关于更多的介绍可以<a href="http://www.w3cplus.com/css/towards-retina-web.html">点击这里</a>详细了解。</p>
+<p>看到这里，你能感觉到，在移动端时代屏幕适配除了Layout之外，还要考虑到图片的适配，因为其直接影响到页面显示质量，对于如何实现图片适配，再此不做过多详细阐述。这里盗用了<a href="http://www.nangongruiyang.com/">@南宮瑞揚</a>根据<a href="http://mir.aculo.us/2012/06/26/flowchart-how-to-retinafy-your-website/">mir.aculo.us</a>翻译的一张信息图：</p>
+<p><a href="https://camo.githubusercontent.com/55960bfa1419eabdee47efdd2f863a9ab50b3203/687474703a2f2f7777772e773363706c75732e636f6d2f73697465732f64656661756c742f66696c65732f626c6f67732f3230313231322f726574696e612d7765622d31302e6a7067"><img alt="Flexible实现手淘H5页面的终端适配" class="img-fluid" src="../images/7765622d31302e6a7067" tag="2" /></a></p>
+<h4 id="meta">meta标签<a class="headerlink" href="#meta" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span><span class="p">&gt;</span>标签有很多种，而这里要着重说的是viewport的meta标签，其主要用来告诉浏览器如何规范的渲染Web页面，而你则需要告诉它视窗有多大。在开发移动端页面，我们需要设置meta标签如下：
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>代码以显示网页的屏幕宽度定义了视窗宽度。网页的比例和最大比例被设置为100%。</p>
+<p>留个悬念，因为后面的解决方案中需要重度依赖<code>meta</code>标签。</p>
+<h4 id="cssrem">CSS单位rem<a class="headerlink" href="#cssrem" title="Permanent link">&para;</a></h4>
+<p>在<a href="http://www.w3.org/TR/css3-values/#rem-unit">W3C</a>规范中是这样描述<code>rem</code>的:</p>
+<blockquote>
+<p>font size of the root element.</p>
+</blockquote>
+<p>简单的理解，<code>rem</code>就是相对于根元素<code>的`font-size`来做计算。而我们的方案中使用`rem`单位，是能轻易的根据</code>的<code>font-size</code>计算出元素的盒模型大小。而这个特色对我们来说是特别的有益处。</p>
+<h3 id="_7">前端实现方案<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>了解了前面一些相关概念之后，接下来我们来看实际解决方案。在整个手淘团队，我们有一个名叫<a href="https://github.com/amfe/lib-flexible"><code>lib-flexible</code></a>的库，而这个库就是用来解决H5页面终端适配的。</p>
+<h4 id="lib-flexible">lib-flexible是什么？<a class="headerlink" href="#lib-flexible" title="Permanent link">&para;</a></h4>
+<p><a href="https://github.com/amfe/lib-flexible"><code>lib-flexible</code></a>是一个制作H5适配的开源库，可以<a href="https://github.com/amfe/lib-flexible/archive/master.zip">点击这里</a>下载相关文件，获取需要的JavaScript和CSS文件。</p>
+<p>当然你可以直接使用阿里CDN：</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;http://g.tbcdn.cn/mtb/lib-flexible/{{version}}/??flexible_css.js,flexible.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+</code></pre></div>
+
+<p>将代码中的<code>{{version}}</code>换成对应的版本号<code>0.3.4</code>。</p>
+<h4 id="_8">使用方法<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p><a href="https://github.com/amfe/lib-flexible"><code>lib-flexible</code></a>库的使用方法非常的简单，只需要在Web页面的<code>`中添加对应的</code>flexible_css.js,flexible.js`文件：</p>
+<p>第一种方法是将文件下载到你的项目中，然后通过相对路径添加:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;build/flexible_css.debug.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;build/flexible.debug.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+</code></pre></div>
+
+<p>或者直接加载阿里CDN的文件：</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+</code></pre></div>
+
+<p>另外强烈建议对JS做**内联处理**，在所有资源加载之前执行这个JS。执行这个JS后，会在<code>`元素上增加一个</code>data-dpr<code>属性，以及一个</code>font-size<code>样式。JS会根据不同的设备添加不同的</code>data-dpr<code>值，比如说</code>2<code>或者</code>3<code>，同时会给</code>html<code>加上对应的</code>font-size<code>的值，比如说</code>75px`。</p>
+<p>如此一来，页面中的元素，都可以通过<code>rem</code>单位来设置。他们会根据<code>html</code>元素的<code>font-size</code>值做相应的计算，从而实现屏幕的适配效果。</p>
+<p>除此之外，在引入<a href="https://github.com/amfe/lib-flexible"><code>lib-flexible</code></a>需要执行的JS之前，可以手动设置<code>meta</code>来控制<code>dpr</code>值，如：</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;flexible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;initial-dpr=2&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
+
+<p>其中<code>initial-dpr</code>会把<code>dpr</code>强制设置为给定的值。如果手动设置了<code>dpr</code>之后，不管设备是多少的<code>dpr</code>，都会强制认为其<code>dpr</code>是你设置的值。在此不建议手动强制设置<code>dpr</code>，因为在Flexible中，只对iOS设备进行<code>dpr</code>的判断，对于Android系列，始终认为其<code>dpr</code>为<code>1</code>。</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">dpr</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">scale</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">isAndroid</span> <span class="o">=</span> <span class="nx">win</span><span class="p">.</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">appVersion</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/android/gi</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">isIPhone</span> <span class="o">=</span> <span class="nx">win</span><span class="p">.</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">appVersion</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/iphone/gi</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">devicePixelRatio</span> <span class="o">=</span> <span class="nx">win</span><span class="p">.</span><span class="nx">devicePixelRatio</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">isIPhone</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">devicePixelRatio</span> <span class="o">&gt;=</span> <span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="o">!</span><span class="nx">dpr</span> <span class="o">||</span> <span class="nx">dpr</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">))</span> <span class="p">{</span>                
+            <span class="nx">dpr</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">devicePixelRatio</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="o">!</span><span class="nx">dpr</span> <span class="o">||</span> <span class="nx">dpr</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)){</span>
+            <span class="nx">dpr</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">dpr</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// 其他设备下，仍旧使用1倍的方案</span>
+        <span class="nx">dpr</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">scale</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="nx">dpr</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h4 id="flexible">flexible的实质<a class="headerlink" href="#flexible" title="Permanent link">&para;</a></h4>
+<p><code>flexible</code>实际上就是能过JS来动态改写<code>meta</code>标签，代码类似这样：</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">metaEl</span> <span class="o">=</span> <span class="nx">doc</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;meta&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">scale</span> <span class="o">=</span> <span class="nx">isRetina</span> <span class="o">?</span> <span class="mf">0.5</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span>
+<span class="nx">metaEl</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;viewport&#39;</span><span class="p">);</span>
+<span class="nx">metaEl</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">,</span> <span class="s1">&#39;initial-scale=&#39;</span> <span class="o">+</span> <span class="nx">scale</span> <span class="o">+</span> <span class="s1">&#39;, maximum-scale=&#39;</span> <span class="o">+</span> <span class="nx">scale</span> <span class="o">+</span> <span class="s1">&#39;, minimum-scale=&#39;</span> <span class="o">+</span> <span class="nx">scale</span> <span class="o">+</span> <span class="s1">&#39;, user-scalable=no&#39;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">docEl</span><span class="p">.</span><span class="nx">firstElementChild</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">firstElementChild</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">metaEl</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">wrap</span> <span class="o">=</span> <span class="nx">doc</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span>
+    <span class="nx">wrap</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">metaEl</span><span class="p">);</span>
+    <span class="nx">documen</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">wrap</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>事实上他做了这几样事情：</p>
+<ul>
+<li>动态改写``标签</li>
+<li>给<code>`元素添加</code>data-dpr<code>属性，并且动态改写</code>data-dpr`的值</li>
+<li>给<code>`元素添加</code>font-size<code>属性，并且动态改写</code>font-size`的值</li>
+</ul>
+<h2 id="_9">案例实战<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>了解Flexible相关的知识之后，咱们回到文章开头。我们的目标是制作一个适配各终端的H5页面。别的不多说，动手才能丰衣足食。</p>
+<h3 id="html">创建HTML模板<a class="headerlink" href="#html" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;yes&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;apple-mobile-web-app-capable&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;yes&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;apple-touch-fullscreen&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;telephone=no,email=no&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;format-detection&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;apple-touch-icon&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;favicon.png&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;Shortcut Icon&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;favicon.png&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;image/x-icon&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>再来一波<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- 页面结构写在这里 --&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>正如前面所介绍的一样，首先加载了Flexible所需的配置：</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+</code></pre></div>
+
+<p>这个时候可以根据设计的图需求，在HTML文档的``中添加对应的HTML结构，比如：</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item-section&quot;</span> <span class="na">data-repeat</span><span class="o">=</span><span class="s">&quot;sections&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item-section_header&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{brannerImag}&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">data-repeat</span><span class="o">=</span><span class="s">&quot;items&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;flag&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;link&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{itemLink}&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;figure flag-item&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{itemLink}&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{imgSrc}&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;figcaption flag-item&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;flag-title&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{itemLink}&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>{poductName}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;flag-price&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>双11价<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>¥{price}<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;&lt;</span><span class="nt">small</span><span class="p">&gt;</span>({preferential})<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;flag-type&quot;</span><span class="p">&gt;</span>{activityType}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;flag-btn&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{shopLink}&quot;</span><span class="p">&gt;</span>{activeName}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p><em>这仅是一个示例文档，大家可以根据自己风格写模板</em>。</p>
+<p>为了能更好的测试页面，给其配置一点假数据：</p>
+<div class="highlight"><pre><span></span><code><span class="err">//define</span> <span class="err">data</span>
+<span class="err">var</span> <span class="err">pageData</span> <span class="err">=</span> <span class="p">{</span>
+    <span class="err">sections:[{</span>
+        <span class="nt">&quot;brannerImag&quot;</span><span class="p">:</span><span class="s2">&quot;http://xxx.cdn.com/B1PNLZKXXXXXaTXXXXXXXXXXXX-750-481.jpg&quot;</span><span class="p">,</span>
+        <span class="err">items:[{</span>
+            <span class="nt">&quot;itemLink&quot;</span><span class="p">:</span> <span class="s2">&quot;##&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;imgSrc&quot;</span><span class="p">:</span> <span class="s2">&quot;https://placeimg.com/350/350/people/grayscale&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;poductName&quot;</span><span class="p">:</span><span class="s2">&quot;Carter&#39;s1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G093&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="s2">&quot;299.06&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;preferential&quot;</span><span class="p">:</span> <span class="s2">&quot;满400减100&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activityType&quot;</span><span class="p">:</span> <span class="s2">&quot;1小时内热卖5885件&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;shopLink&quot;</span><span class="p">:</span><span class="s2">&quot;##&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;activeName&quot;</span><span class="p">:</span> <span class="s2">&quot;马上抢！&quot;</span>
+        <span class="p">}</span>
+            <span class="err">....</span>
+        <span class="err">}]</span>
+    <span class="err">}]</span>
+<span class="err">}</span>
+</code></pre></div>
+
+<p>接下来的工作就是美化工作了。在写具体样式之前，有几个点需要先了解一下。</p>
+<h3 id="pxrem">把视觉稿中的<code>px</code>转换成<code>rem</code><a class="headerlink" href="#pxrem" title="Permanent link">&para;</a></h3>
+<p>读到这里，大家应该都知道，我们接下来要做的事情，就是如何把视觉稿中的<code>px</code>转换成<code>rem</code>。在此花点时间解释一下。</p>
+<p>首先，目前日常工作当中，视觉设计师给到前端开发人员手中的视觉稿尺寸一般是基于<code>640px</code>、<code>750px</code>以及<code>1125px</code>宽度为准。甚至为什么？大家应该懂的（考虑Retina屏）。</p>
+<p>正如文章开头显示的示例设计稿，他就是一张以<code>750px</code>为基础设计的。那么问题来了，我们如何将设计稿中的各元素的<code>px</code>转换成<code>rem</code>。</p>
+<p><a href="https://camo.githubusercontent.com/505cef0fae7a7c2abb74ffe5fd26430018cef43a/687474703a2f2f7777772e773363706c75732e636f6d2f73697465732f64656661756c742f66696c65732f626c6f67732f323031352f313531312f72656d2d382e706e67"><img alt="Flexible实现手淘H5页面的终端适配" src="../images/687474703a2f2f7777772e773363706c75732e636f6d2f73697465732f64656661756c742f66696c65732f626c6f67732f323031352f313531312f72656d2d382e706e67" /></a></p>
+<p><em>我厂的视觉设计师想得还是很周到的，会帮你把相关的信息在视觉稿上标注出来</em>。</p>
+<p>目前Flexible会将视觉稿分成**<code>100份</code>**（主要为了以后能更好的兼容<code>vh</code>和<code>vw</code>），而每一份被称为一个单位<code>a</code>。同时<code>1rem</code>单位被认定为<code>10a</code>。针对我们这份视觉稿可以计算出：</p>
+<div class="highlight"><pre><span></span><code>1a   = 7.5px
+1rem = 75px 
+</code></pre></div>
+
+<p>那么我们这个示例的稿子就分成了<code>10a</code>，也就是整个宽度为<code>10rem</code>，<code>`对应的</code>font-size<code>为</code>75px`：</p>
+<p><a href="https://camo.githubusercontent.com/d55922d1d351bd879e258c00abde7d05f0b72c76/687474703a2f2f7777772e773363706c75732e636f6d2f73697465732f64656661756c742f66696c65732f626c6f67732f323031352f313531312f72656d2d322e6a7067"><img alt="Flexible实现手淘H5页面的终端适配" src="../images/687474703a2f2f7777772e773363706c75732e636f6d2f73697465732f64656661756c742f66696c65732f626c6f67732f323031352f313531312f72656d2d322e6a7067" /></a></p>
+<p>这样一来，对于视觉稿上的元素尺寸换算，只需要原始的<code>px值</code>除以<code>rem基准值</code>即可。例如此例视觉稿中的图片，其尺寸是<code>176px * 176px</code>,转换成为<code>2.346667rem * 2.346667rem</code>。</p>
+<h3 id="_10">如何快速计算<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>在实际生产当中，如果每一次计算<code>px</code>转换<code>rem</code>，或许会觉得非常麻烦，或许直接影响大家平时的开发效率。为了能让大家更快进行转换，我们团队内的同学各施所长，为<code>px</code>转换<code>rem</code>写了各式各样的小工具。</p>
+<h4 id="cssrem_1">CSSREM<a class="headerlink" href="#cssrem_1" title="Permanent link">&para;</a></h4>
+<p><a href="https://github.com/flashlizi/cssrem">CSSREM</a>是一个CSS的<code>px</code>值转<code>rem</code>值的Sublime Text3自动完成插件。这个插件是由<a href="https://github.com/flashlizi">@正霖</a>编写。先来看看插件的效果：</p>
+<p><a href="https://camo.githubusercontent.com/7bc50fa37be4ada5d263152a107125a216a6936c/687474703a2f2f7777772e773363706c75732e636f6d2f73697465732f64656661756c742f66696c65732f626c6f67732f323031352f313531312f63737372656d2e676966"><img alt="Flexible实现手淘H5页面的终端适配" src="../images/687474703a2f2f7777772e773363706c75732e636f6d2f73697465732f64656661756c742f66696c65732f626c6f67732f323031352f313531312f63737372656d2e676966" /></a></p>
+<p>有关于CSSREM如何安装、配置教程可以<a href="https://github.com/flashlizi/cssrem">点击这里查阅</a>。</p>
+<h4 id="css_1">CSS处理器<a class="headerlink" href="#css_1" title="Permanent link">&para;</a></h4>
+<p>除了使用编辑器的插件之外，还可以使用CSS的处理器来帮助大家处理。比如说Sass、LESS以及PostCSS这样的处理器。我们简单来看两个示例。</p>
+<h5 id="sass">Sass<a class="headerlink" href="#sass" title="Permanent link">&para;</a></h5>
+<p>使用<a href="http://www.w3cplus.com/blog/tags/302.html">Sass</a>的同学，可以使用Sass的函数、混合宏这些功能来实现：</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">function</span> <span class="nt">px2em</span><span class="o">($</span><span class="nt">px</span><span class="o">,</span> <span class="o">$</span><span class="nt">base-font-size</span><span class="o">:</span> <span class="nt">16px</span><span class="o">)</span> <span class="p">{</span>
+    <span class="p">@</span><span class="k">if</span> <span class="o">(</span><span class="nt">unitless</span><span class="o">($</span><span class="nt">px</span><span class="o">))</span> <span class="p">{</span>
+        <span class="p">@</span><span class="k">warn</span> <span class="s2">&quot;Assuming #{$px} to be in pixels, attempting to convert it into pixels for you&quot;</span><span class="p">;</span>
+        <span class="p">@</span><span class="k">return</span> <span class="nt">px2em</span><span class="o">($</span><span class="nt">px</span> <span class="o">+</span> <span class="nt">0px</span><span class="o">)</span><span class="p">;</span> <span class="o">//</span> <span class="nt">That</span> <span class="nt">may</span> <span class="nt">fail</span><span class="o">.</span>
+    <span class="p">}</span> <span class="p">@</span><span class="k">else</span> <span class="nt">if</span> <span class="o">(</span><span class="nt">unit</span><span class="o">($</span><span class="nt">px</span><span class="o">)</span> <span class="o">==</span> <span class="nt">em</span><span class="o">)</span> <span class="p">{</span>
+        <span class="p">@</span><span class="k">return</span> <span class="o">$</span><span class="nt">px</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="p">@</span><span class="k">return</span> <span class="o">($</span><span class="nt">px</span> <span class="o">/</span> <span class="o">$</span><span class="nt">base-font-size</span><span class="o">)</span> <span class="o">*</span> <span class="nt">1em</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>除了使用Sass函数外，还可以使用Sass的混合宏：</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">mixin</span> <span class="nt">px2rem</span><span class="o">($</span><span class="nt">property</span><span class="o">,$</span><span class="nt">px-values</span><span class="o">,$</span><span class="nt">baseline-px</span><span class="p">:</span><span class="nd">16px</span><span class="o">,$</span><span class="nt">support-for-ie</span><span class="p">:</span><span class="nd">false</span><span class="o">)</span><span class="p">{</span>
+    <span class="o">//</span><span class="nt">Conver</span> <span class="nt">the</span> <span class="nt">baseline</span> <span class="nt">into</span> <span class="nt">rems</span>
+    <span class="o">$</span><span class="nt">baseline-rem</span><span class="o">:</span> <span class="o">$</span><span class="nt">baseline-px</span> <span class="o">/</span> <span class="nt">1rem</span> <span class="o">*</span> <span class="nt">1</span><span class="o">;</span>
+    <span class="o">//</span><span class="nt">Print</span> <span class="nt">the</span> <span class="nt">first</span> <span class="nt">line</span> <span class="nt">in</span> <span class="nt">pixel</span> <span class="nt">values</span>
+    <span class="p">@</span><span class="k">if</span> <span class="o">$</span><span class="nt">support-for-ie</span> <span class="p">{</span>
+        <span class="err">#</span><span class="p">{</span><span class="err">$property</span><span class="p">}</span><span class="o">:</span> <span class="o">$</span><span class="nt">px-values</span><span class="o">;</span>
+    <span class="p">}</span>
+    <span class="o">//</span><span class="nt">if</span> <span class="nt">there</span> <span class="nt">is</span> <span class="nt">only</span> <span class="nt">one</span> <span class="o">(</span><span class="nt">numeric</span><span class="o">)</span> <span class="nt">value</span><span class="o">,</span> <span class="nt">return</span> <span class="nt">the</span> <span class="nt">property</span><span class="o">/</span><span class="nt">value</span> <span class="nt">line</span> <span class="nt">for</span> <span class="nt">it</span><span class="o">.</span>
+    <span class="p">@</span><span class="k">if</span> <span class="nt">type-of</span><span class="o">($</span><span class="nt">px-values</span><span class="o">)</span> <span class="o">==</span> <span class="s2">&quot;number&quot;</span><span class="p">{</span>
+        <span class="err">#</span><span class="p">{</span><span class="err">$property</span><span class="p">}</span><span class="o">:</span> <span class="o">$</span><span class="nt">px-values</span> <span class="o">/</span> <span class="o">$</span><span class="nt">baseline-rem</span><span class="o">;</span>
+    <span class="p">}</span>
+    <span class="p">@</span><span class="k">else</span> <span class="p">{</span>
+        <span class="o">//</span><span class="nt">Create</span> <span class="nt">an</span> <span class="nt">empty</span> <span class="nt">list</span> <span class="nt">that</span> <span class="nt">we</span> <span class="nt">can</span> <span class="nt">dump</span> <span class="nt">values</span> <span class="nt">into</span>
+        <span class="o">$</span><span class="nt">rem-values</span><span class="o">:();</span>
+        <span class="p">@</span><span class="k">each</span> <span class="o">$</span><span class="nt">value</span> <span class="nt">in</span> <span class="o">$</span><span class="nt">px-values</span><span class="p">{</span>
+            <span class="o">//</span> <span class="nt">If</span> <span class="nt">the</span> <span class="nt">value</span> <span class="nt">is</span> <span class="nt">zero</span> <span class="nt">or</span> <span class="nt">not</span> <span class="nt">a</span> <span class="nt">number</span><span class="o">,</span> <span class="nt">return</span> <span class="nt">it</span>
+            <span class="p">@</span><span class="k">if</span> <span class="o">$</span><span class="nt">value</span> <span class="o">==</span> <span class="nt">0</span> <span class="nt">or</span> <span class="nt">type-of</span><span class="o">($</span><span class="nt">value</span><span class="o">)</span> <span class="o">!=</span> <span class="s2">&quot;number&quot;</span><span class="p">{</span>
+                <span class="o">$</span><span class="nt">rem-values</span><span class="o">:</span> <span class="nt">append</span><span class="o">($</span><span class="nt">rem-values</span><span class="o">,</span> <span class="o">$</span><span class="nt">value</span> <span class="o">/</span> <span class="o">$</span><span class="nt">baseline-rem</span><span class="o">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="o">//</span> <span class="nt">Return</span> <span class="nt">the</span> <span class="nt">property</span> <span class="nt">and</span> <span class="nt">its</span> <span class="nt">list</span> <span class="nt">of</span> <span class="nt">converted</span> <span class="nt">values</span>
+        <span class="err">#</span><span class="p">{</span><span class="err">$property</span><span class="p">}</span><span class="o">:</span> <span class="o">$</span><span class="nt">rem-values</span><span class="o">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>有关于更多的介绍，可以<a href="http://www.w3cplus.com/blog/tags/143.html">点击这里</a>进行了解。</p>
+<h5 id="postcsspx2rem">PostCSS(px2rem)<a class="headerlink" href="#postcsspx2rem" title="Permanent link">&para;</a></h5>
+<p>除了Sass这样的CSS处理器这外，我们团队的<a href="http://weibo.com/u/2168835224">@颂奇</a>同学还开发了一款<code>npm</code>的工具<a href="https://www.npmjs.com/package/px2rem">px2rem</a>。安装好<a href="https://www.npmjs.com/package/px2rem">px2rem</a>之后，可以在项目中直接使用。也可以使用<a href="http://www.w3cplus.com/blog/tags/516.html">PostCSS</a>。使用PostCSS插件<a href="https://www.npmjs.com/package/postcss-px2rem">postcss-px2rem</a>：</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">postcss</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-postcss&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">px2rem</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;postcss-px2rem&#39;</span><span class="p">);</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">processors</span> <span class="o">=</span> <span class="p">[</span><span class="nx">px2rem</span><span class="p">({</span><span class="nx">remUnit</span><span class="o">:</span> <span class="mi">75</span><span class="p">})];</span>
+    <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">&#39;./src/*.css&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">postcss</span><span class="p">(</span><span class="nx">processors</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;./dest&#39;</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p>除了在Gulp中配置外，还可以使用其他的配置方式，详细的介绍可以<a href="https://www.npmjs.com/package/postcss-px2rem">点击这里</a>进行了解。</p>
+<p>配置完成之后，在实际使用时，你只要像下面这样使用：</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">selector</span> <span class="p">{</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">150</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mi">64</span><span class="kt">px</span><span class="p">;</span> <span class="c">/*px*/</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">28</span><span class="kt">px</span><span class="p">;</span> <span class="c">/*px*/</span>
+    <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#ddd</span><span class="p">;</span> <span class="c">/*no*/</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><code>px2rem</code>处理之后将会变成：</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">selector</span> <span class="p">{</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">2</span><span class="kt">rem</span><span class="p">;</span>
+    <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#ddd</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">[</span><span class="nt">data-dpr</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="o">]</span> <span class="p">.</span><span class="nc">selector</span> <span class="p">{</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mi">32</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">14</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">[</span><span class="nt">data-dpr</span><span class="o">=</span><span class="s2">&quot;2&quot;</span><span class="o">]</span> <span class="p">.</span><span class="nc">selector</span> <span class="p">{</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mi">64</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">28</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">[</span><span class="nt">data-dpr</span><span class="o">=</span><span class="s2">&quot;3&quot;</span><span class="o">]</span> <span class="p">.</span><span class="nc">selector</span> <span class="p">{</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mi">96</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">42</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>在整个开发中有了这些工具之后，完全不用担心<code>px</code>值转<code>rem</code>值影响开发效率。</p>
+<h3 id="rem">文本字号不建议使用<code>rem</code><a class="headerlink" href="#rem" title="Permanent link">&para;</a></h3>
+<p>前面大家都见证了如何使用<code>rem</code>来完成H5适配。那么文本又将如何处理适配。是不是也通过<code>rem</code>来做自动适配。</p>
+<p>显然，我们在iPhone3G和iPhone4的Retina屏下面，希望看到的文本字号是相同的。也就是说，我们**不希望文本在Retina屏幕下变小**，另外，我们**希望在大屏手机上看到更多文本**，以及，现在绝大多数的字体文件都自带一些点阵尺寸，通常是<code>16px</code>和<code>24px</code>，所以我们**不希望出现<code>13px</code>和<code>15px</code>这样的奇葩尺寸**。</p>
+<p>如此一来，就决定了在制作H5的页面中，<code>rem</code>并不适合用到段落文本上。所以在Flexible整个适配方案中，考虑文本还是使用<code>px</code>作为单位。只不过使用<code>[data-dpr]</code>属性来区分不同<code>dpr</code>下的文本字号大小。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span> 
+    <span class="k">height</span><span class="p">:</span> <span class="mf">0.4</span><span class="kt">rem</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span><span class="p">;</span> <span class="err">//</span> <span class="err">默认写上dpr为1的fontSize</span>
+<span class="p">}</span>
+<span class="o">[</span><span class="nt">data-dpr</span><span class="o">=</span><span class="s2">&quot;2&quot;</span><span class="o">]</span> <span class="nt">div</span> <span class="p">{</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">24</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">[</span><span class="nt">data-dpr</span><span class="o">=</span><span class="s2">&quot;3&quot;</span><span class="o">]</span> <span class="nt">div</span> <span class="p">{</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">36</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>为了能更好的利于开发，在实际开发中，我们可以定制一个<a href="https://github.com/W3cplus/Sass-Resources/blob/master/mixins/_font-dpr.scss"><code>font-dpr()</code></a>这样的Sass混合宏：</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">mixin</span> <span class="nt">font-dpr</span><span class="o">($</span><span class="nt">font-size</span><span class="o">)</span><span class="p">{</span>
+    <span class="nt">font-size</span><span class="o">:</span> <span class="o">$</span><span class="nt">font-size</span><span class="o">;</span>
+
+    <span class="o">[</span><span class="nt">data-dpr</span><span class="o">=</span><span class="s2">&quot;2&quot;</span><span class="o">]</span> <span class="o">&amp;</span> <span class="p">{</span>
+        <span class="k">font-size</span><span class="p">:</span> <span class="err">$</span><span class="k">font-size</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="o">[</span><span class="nt">data-dpr</span><span class="o">=</span><span class="s2">&quot;3&quot;</span><span class="o">]</span> <span class="o">&amp;</span> <span class="p">{</span>
+        <span class="k">font-size</span><span class="p">:</span> <span class="err">$</span><span class="k">font-size</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>有了这样的混合宏之后，在开发中可以直接这样使用：</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">include</span> <span class="nt">font-dpr</span><span class="o">(</span><span class="nt">16px</span><span class="o">)</span><span class="p">;</span>
+</code></pre></div>
+
+<p>当然这只是针对于描述性的文本，比如说段落文本。但有的时候文本的字号也需要分场景的，比如在项目中有一个slogan,业务方希望这个slogan能根据不同的终端适配。针对这样的场景，完全可以使用<code>rem</code>给slogan做计量单位。</p>
+<h3 id="css_2">CSS<a class="headerlink" href="#css_2" title="Permanent link">&para;</a></h3>
+<p>本来想把这个页面的用到的CSS(或SCSS)贴出来，但考虑篇幅过长，而且这么简单的页面，我想大家也能轻而易举搞定。所以就省略了。权当是给大家留的一个作业吧，感兴趣的可以试试Flexible能否帮你快速完成H5页面终端适配。</p>
+<h2 id="_11">效果<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>最后来看看真机上显示的效果吧。我截了两种设备下的效果：</p>
+<h3 id="iphone4">iPhone4<a class="headerlink" href="#iphone4" title="Permanent link">&para;</a></h3>
+<p>[<img alt="Flexible实现手淘H5页面的终端适配" src="../images/687474703a2f2f7777772e773363706c75732e636f6d2f73697465732f64656661756c742f66696c65732f626c6f67732f323031352f313531312f72656d2d392e6a7067" />](https://camo.githu</p>
+<h3 id="iphone6">iPhone6+<a class="headerlink" href="#iphone6" title="Permanent link">&para;</a></h3>
+<p>[<img alt="" src="../images/687474703a2f2f7777772e773363706c75732e636f6d2f73697465732f64656661756c742f66696c65732f626c6f67732f323031352f313531312f72656d2d31302e706e67" /></p>
+<h2 id="_12">总结<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>其实H5适配的方案有很多种，网上有关于这方面的教程也非常的多。不管哪种方法，都有其自己的优势和劣势。而本文主要介绍的是如何使用Flexible这样的一库来完成H5页面的终端适配。为什么推荐使用Flexible库来做H5页面的终端设备适配呢？主要因为这个库在手淘已经使用了近一年，而且已达到了较为稳定的状态。除此之外，你不需要考虑如何对元素进行折算，可以根据对应的视觉稿，直接切入。</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="">
+        
+          <a href="../rem%E5%8D%95%E4%BD%8D%E8%87%AA%E9%80%82%E5%BA%94%E5%B1%8F%E5%B9%95/" title="2. rem单位详解" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                2. rem单位详解
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../%E6%9C%80%E6%96%B0%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D%E6%96%B9%E6%A1%88/" title="4. 最新移动端适配方案" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                4. 最新移动端适配方案
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © 2020 雨果学院wiki
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../assets/js/jquery-1.11.3.min.js"></script>
+      
+        <script src="../../assets/js/simple-lightbox.min.js"></script>
+      
+        <script src="../../assets/js/custom.js"></script>
+      
+    
+  </body>
+</html>

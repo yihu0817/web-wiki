@@ -1,0 +1,934 @@
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="web前端开发wiki">
+      
+      
+        <link rel="canonical" href="https://www.yuguoxy.com/web/%E4%BD%A0%E4%BA%86%E8%A7%A3%E8%BF%87%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D%E5%90%97/">
+      
+      
+        <meta name="author" content="zhousir">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.1">
+    
+    
+      
+        <title>6. 你了解过移动端适配吗 - web前端开发</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a676eddb.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.b302131d.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#546e7a">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700%7CUbuntu+Mono&display=fallback">
+        <style>body,input{font-family:"Ubuntu",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../assets/css/simplelightbox.min.css">
+    
+      <link rel="stylesheet" href="../../assets/css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="" data-md-color-primary="blue-grey" data-md-color-accent="pink">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="">
+    <a href="https://www.yuguoxy.com/" title="web前端开发" class="md-header-nav__button md-logo" aria-label="web前端开发">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            web前端开发
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              6. 你了解过移动端适配吗
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../.." class="md-tabs__link">
+          介绍
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tools/markdown%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="md-tabs__link">
+          markdown&git
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../vue/vue%E7%AE%80%E4%BB%8B/" class="md-tabs__link">
+          vue框架
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Web%E5%AE%89%E5%85%A8/" class="md-tabs__link">
+          web技术
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../%E9%A1%B5%E9%9D%A2%E5%8D%95%E4%BD%8D%E5%B0%8F%E7%BB%93/" class="md-tabs__link md-tabs__link--active">
+          屏幕适配方案
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../api/usermanger_api/" class="md-tabs__link">
+          api接口文档
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://www.yuguoxy.com/" title="web前端开发" class="md-nav__button md-logo" aria-label="web前端开发">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    web前端开发
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      介绍
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="介绍" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        介绍
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="1. 平台介绍" class="md-nav__link">
+      1. 平台介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/00web%E5%89%8D%E7%AB%AF%E4%BB%8B%E7%BB%8D/" title="2. web前端介绍" class="md-nav__link">
+      2. web前端介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/01html%E5%9F%BA%E7%A1%80/" title="3. html基础" class="md-nav__link">
+      3. html基础
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      markdown&git
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="markdown&git" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        markdown&git
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tools/markdown%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" title="1. markdown使用教程" class="md-nav__link">
+      1. markdown使用教程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tools/git%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" title="2. git使用教程" class="md-nav__link">
+      2. git使用教程
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      vue框架
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="vue框架" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        vue框架
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vue/vue%E7%AE%80%E4%BB%8B/" title="1. vue简介" class="md-nav__link">
+      1. vue简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vue/vue%E5%AE%89%E8%A3%85/" title="2. vue安装" class="md-nav__link">
+      2. vue安装
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      web技术
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="web技术" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        web技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Web%E5%AE%89%E5%85%A8/" title="1. web安全" class="md-nav__link">
+      1. web安全
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E6%97%A0%E9%99%90%E4%B8%8B%E6%8B%89%E6%96%B9%E6%A1%88/" title="2. 无限下拉方案" class="md-nav__link">
+      2. 无限下拉方案
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../css%E5%8F%98%E9%87%8F%E6%95%99%E7%A8%8B/" title="3. css变量" class="md-nav__link">
+      3. css变量
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      屏幕适配方案
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="屏幕适配方案" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        屏幕适配方案
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E9%A1%B5%E9%9D%A2%E5%8D%95%E4%BD%8D%E5%B0%8F%E7%BB%93/" title="1. pt单位" class="md-nav__link">
+      1. pt单位
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rem%E5%8D%95%E4%BD%8D%E8%87%AA%E9%80%82%E5%BA%94%E5%B1%8F%E5%B9%95/" title="2. rem单位详解" class="md-nav__link">
+      2. rem单位详解
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E4%BD%BF%E7%94%A8Flexible%E5%AE%9E%E7%8E%B0%E6%89%8B%E6%B7%98H5%E9%A1%B5%E9%9D%A2%E7%9A%84%E7%BB%88%E7%AB%AF%E9%80%82%E9%85%8D/" title="3. 手淘H5页面的终端适配" class="md-nav__link">
+      3. 手淘H5页面的终端适配
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E6%9C%80%E6%96%B0%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D%E6%96%B9%E6%A1%88/" title="4. 最新移动端适配方案" class="md-nav__link">
+      4. 最新移动端适配方案
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../px%E8%BD%ACvw%E5%92%8Cvh%E7%9A%84%E5%B7%A5%E5%85%B7/" title="5. px转vw和vh的工具" class="md-nav__link">
+      5. px转vw和vh的工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="6. 你了解过移动端适配吗" class="md-nav__link md-nav__link--active">
+      6. 你了解过移动端适配吗
+    </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      api接口文档
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="api接口文档" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        api接口文档
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/usermanger_api/" title="1. 后台中心api文档" class="md-nav__link">
+      1. 后台中心api文档
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="_1">你了解过移动端适配吗？<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_2">前言<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<p>很多人聊起移动端适配都是懵逼状态，都想口吐芬芳。难道移动端还要适配，直接px写死，其他自适应不就完了吗？其实不然，要求严格的公司会要求缩放比例完全相同，简单说就是，在每个手机上的每一行的字数都要一样。接下来，我们就要细说移动端适配的前世今生</p>
+<h1 id="1">1、为什么要移动端适配？<a class="headerlink" href="#1" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>一般情况下设计稿的设计师按照375的尺寸设计，然而，在现在移动终端（就是手机）快速更新的时代，每个品牌的手机都有着不同的物理分辨率，这样就会导致，每台设备的逻辑分辨率也不尽相同，此时357的设计稿，如果想要还原那基本是不可能了，因为如果一个左右布局，左边如果写死，右边自适应的话，每个设备的右边所展示的内容大小就不尽相同，这是移动端适配就显得尤其重要</p>
+</blockquote>
+<p>既然要了解前世今生，我们就从几个概念说起先上一张图</p>
+<p><img alt="img" src="../../images/image-1111.png" /></p>
+<p>下面我们一个个解析</p>
+<h2 id="_3">屏幕尺寸<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>屏幕尺寸是以屏幕对角线的长度来计量，计量单位为英寸。</p>
+</blockquote>
+<p>如图所示两个对角线的长度就是这个屏幕的尺寸</p>
+<p><img alt="img" src="../../images/image-2222.png" /></p>
+<h2 id="_4">像素<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>我们看到上图320x480叫分辨率，而这个所谓的分辨率就是说白了就横向320个像素纵向480个像素组成</p>
+<h3 id="_5">什么叫像素呢？<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>像素（Pel，pixel;pictureelement），为组成一幅图像的全部亮度和色度的最小图像单元。电视的图像是由按一定间隔排列的亮度不同的像点构成的，形成像点的单位也就是像素，组成图像的最小单位就是像素。从计算机技术的角度来解释，像素是硬件和软件所能控制的最小单位。它指显示屏的画面上表示出来的最小单位，不是图画上的最小单位。一幅图像通常包含成千上万个像素，每个像素都有自己的颜色信息，它们紧密地组合在一起。由于人眼的错觉，这些组合在一起的像素被当成一幅完整的图像。当修改图像的某区域，实际上是在修改该区域内的像素。对这些像素修改的好与坏将决定最终图片的质量。单位面积内的像素越多，图像的效果就越好。彩色电视图像是由成千个像素点所组成的，而且每个像素都是由红绿蓝三种颜色并排组成的。(注意每个像素的大小是不固定的，他是根据设备的分辨率决定的，知识点，后面要考)</p>
+</blockquote>
+<h3 id="_6">什么叫分辨率呢?<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>屏幕分辨率是指纵横向上的像素点数，单位是px。屏幕分辨率确定计算机屏幕上显示多少信息的设置，以水平和垂直像素来衡量。就相同大小的屏幕而言，当屏幕分辨率低时（例如 640 x 480），在屏幕上显示的像素少，单个像素尺寸比较大。屏幕分辨率高时（例如 1600 x 1200），在屏幕上显示的像素多，单个像素尺寸比较小。</p>
+</blockquote>
+<p>知道什么叫做分辨率后，有人就会奇怪，我记得苹果的苹果官网上的苹果6的分辨率为750x1334啊，但是设计稿上苹果6的分辨率为375x667啊,而且各个设备的分辨率都比实际分辨率小很多，这就牵扯到一些历史原因了</p>
+<h3 id="_7">设备物理分辨率（设备像素）<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>相信我们所有前端开发者，都是见证了手机这个移动设备发展的过程。从蓝屏手机，到彩屏手机，到诺基亚研发出来触屏手机，再到智能手机一步步发展下来，我们的我们的手越来越清晰，越来越大，所以我们的屏幕发展也越来越迅速。</p>
+<p><img alt="image-20200428151055712" src="../../images/image-20200428151055712.png" /></p>
+<p>上图可以清楚的看到，不同分辨率所带来的的差距</p>
+<p>从最初的颗粒感相当大的屏幕，到720p再到1080p，甚至于现在各家旗舰手机的2k屏幕，我们的物理分辨率在变得原来越大。这样就暴露出来一个问题，我们如果手机分辨率翻倍，我们的图像不就要被缩小一倍，我们难道要在每个设备上就出个设计稿，每个设备的分辨不尽相同啊，其实你担忧的问题，我们的乔帮主在很多年前就想到了。这就是我们的逻辑分辨率</p>
+<h3 id="_8">逻辑分辨率（设备独立像素）<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>如下图所示，虽然设备物理分辨不同，但是他的这个逻辑分辨率却都差不多，这就要感谢乔帮主了</p>
+<p><img alt="image-20200428151129754" src="../../images/image-20200428151129754.png" /></p>
+<p>乔布斯在iPhone4的发布会上首次提出了Retina Display(视网膜屏幕)的概念，在iPhone4使用的视网膜屏幕中，把2x2个像素当1个像素使用，这样让屏幕看起来更精致，但是元素的大小却不会改变。从此以后高分辨率的设备，多了一个逻辑像素。这些设备逻辑像素的差别虽然不会跨度很大，但是仍然有点差别，于是便诞生了移动端页面需要适配这个问题，既然逻辑像素由物理像素得来，那他们就会有一个像素比值</p>
+<h3 id="_9">设备像素比<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>设备像素比device pixel ratio简称dpr，即物理像素和设备独立像素的比值。为什么要知道设备像素比呢？因为这个像素比会产生一个非常经典的问题，1像素边框的问题。</p>
+<h4 id="1px">1px边框问题<a class="headerlink" href="#1px" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>当我们css里写的1px的时候，由于它是逻辑像素，导致我们的逻辑像素根据这个设备像素比（dpr）去映射到设备上就为2px，或者3px，由于每个设备的屏幕尺寸不一样，就导致每个物理像素渲染出来的大小也不同（记得上面的知识点吗，设备的像素大小是不固定的），这样如果在尺寸比较大的设备上，1px渲染出来的样子相当的粗矿，这就是经典的一像素边框问题</p>
+</blockquote>
+<h4 id="_10">如何解决<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p>核心思路，就是 <strong>在web中，浏览器为我们提供了window.devicePixelRatio来帮助我们获取dpr。在css中，可以使用媒体查询min-device-pixel-ratio，区分dpr：</strong> 我们根据这个像素比，来算出他对应应该有的大小,但是暴露个非常大的兼容问题</p>
+<p><img alt="image-20200428151200214" src="../../images/image-20200428151200214.png" /></p>
+<blockquote>
+<p>其中Chrome把0.5px四舍五入变成了1px，而firefox/safari能够画出半个像素的边，并且Chrome会把小于0.5px的当成0，而Firefox会把不小于0.55px当成1px，Safari是把不小于0.75px当成1px，进一步在手机上观察iOS的Chrome会画出0.5px的边，而安卓(5.0)原生浏览器是不行的。所以直接设置0.5px不同浏览器的差异比较大，并且我们看到不同系统的不同浏览器对小数点的px有不同的处理。所以如果我们把单位设置成小数的px包括宽高等，其实不太可靠，因为不同浏览器表现不一样。</p>
+</blockquote>
+<p>至于其他解决一像素边框问题网上有一堆答案，在这里我推荐一种非常好用，并且没有副作用的解决方案</p>
+<p><strong>transform: scale(0.5) 方案</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="k">height</span><span class="p">:</span><span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">background</span><span class="p">:</span><span class="mh">#000</span><span class="p">;</span>
+    <span class="kp">-webkit-</span><span class="k">transform</span><span class="p">:</span> <span class="nb">scaleY</span><span class="p">(</span><span class="mf">0.5</span><span class="p">);</span>
+    <span class="kp">-webkit-</span><span class="k">transform-origin</span><span class="p">:</span><span class="mi">0</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">overflow</span><span class="p">:</span> <span class="kc">hidden</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>css根据设备像素比媒体查询后的解决方案</p>
+<div class="highlight"><pre><span></span><code><span class="c">/* 2倍屏 */</span>
+<span class="p">@</span><span class="k">media</span> <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">-webkit-min-device-pixel-ratio</span><span class="o">:</span> <span class="nt">2</span><span class="p">.</span><span class="nc">0</span><span class="o">)</span> <span class="p">{</span>
+    <span class="p">.</span><span class="nc">border-bottom</span><span class="p">::</span><span class="nd">after</span> <span class="p">{</span>
+        <span class="kp">-webkit-</span><span class="k">transform</span><span class="p">:</span> <span class="nb">scaleY</span><span class="p">(</span><span class="mf">0.5</span><span class="p">);</span>
+        <span class="k">transform</span><span class="p">:</span> <span class="nb">scaleY</span><span class="p">(</span><span class="mf">0.5</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c">/* 3倍屏 */</span>
+<span class="p">@</span><span class="k">media</span> <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">-webkit-min-device-pixel-ratio</span><span class="o">:</span> <span class="nt">3</span><span class="p">.</span><span class="nc">0</span><span class="o">)</span> <span class="p">{</span>
+    <span class="p">.</span><span class="nc">border-bottom</span><span class="p">::</span><span class="nd">after</span> <span class="p">{</span>
+        <span class="kp">-webkit-</span><span class="k">transform</span><span class="p">:</span> <span class="nb">scaleY</span><span class="p">(</span><span class="mf">0.33</span><span class="p">);</span>
+        <span class="k">transform</span><span class="p">:</span> <span class="nb">scaleY</span><span class="p">(</span><span class="mf">0.33</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>如此，完美的解决一像素看着粗的问题</p>
+<h1 id="_11">如何适配<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h1>
+<h2 id="viewport">viewport<a class="headerlink" href="#viewport" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>视口(viewport)代表当前可见的计算机图形区域。在Web浏览器术语中，通常与浏览器窗口相同，但不包括浏览器的UI， 菜单栏等——即指你正在浏览的文档的那一部分。</p>
+</blockquote>
+<p>那么在移动端如何配置视口呢？ 简单的一个meta标签即可！</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width; initial-scale=1; maximum-scale=1; minimum-scale=1; user-scalable=no;&quot;</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>他们分别什么含义呢？</p>
+<p><img alt="image-20200428151248815" src="../../images/image-20200428151248815.png" /></p>
+<p>我们在移动端视口要想视觉效果和体验好，那么我们的视口宽度必去无限接近理想视口</p>
+<p><strong>理想视口：一般来讲，这个视口其实不是真是存在的，它对设备来说是一个最理想布局视口尺寸，在用户不进行手动缩放的情况下，可以将页面理想地展示。那么所谓的理想宽度就是浏览器（屏幕）的宽度了。</strong></p>
+<p>于是上述的meta设置，就是我们的理想设置，他规定了我们的视口宽度为屏幕宽度，初始缩放比例为1，就是初始时候我们的视觉视口就是理想视口！</p>
+<p><strong>其中user-scalable设置为no 可以解决移动端点击事件延迟问题</strong>（拓展）</p>
+<h2 id="_12">解决适配方法<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h3 id="1rem">1、rem适配<a class="headerlink" href="#1rem" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>rem是CSS3新增的一个相对单位，这个单位引起了广泛关注。这个单位与em有什么区别呢？区别在于使用rem为元素设定字体大小时，仍然是相对大小，但相对的只是HTML根元素。这个单位可谓集相对大小和绝对大小的优点于一身，通过它既可以做到只修改根元素就成比例地调整所有字体大小，又可以避免字体大小逐层复合的连锁反应。目前，除了IE8及更早版本外，所有浏览器均已支持rem。对于不支持它的浏览器，应对方法也很简单，就是多写一个绝对单位的声明。这些浏览器会忽略用rem设定的字体大小</p>
+</blockquote>
+<p>举个例子：</p>
+<div class="highlight"><pre><span></span><code><span class="o">//</span><span class="nt">假设我给根元素的大小设置为14px</span>
+<span class="nt">html</span><span class="p">{</span>
+    <span class="err">font-size：14px</span>
+<span class="p">}</span>
+<span class="o">//</span><span class="nt">那么我底下的p标签如果想要也是14像素</span>
+<span class="nt">p</span><span class="p">{</span>
+    <span class="k">font-size</span><span class="p">:</span><span class="mi">1</span><span class="kt">rem</span>
+<span class="p">}</span>
+<span class="o">//</span><span class="nt">如此即可</span>
+</code></pre></div>
+
+<p>rem的布局 不得不提flexible，flexible方案是阿里早期开源的一个移动端适配解决方案，引用flexible后，我们在页面上统一使用rem来布局。</p>
+<p>他的原理非常简单</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// set 1rem = viewWidth / 10</span>
+<span class="kd">function</span> <span class="nx">setRemUnit</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">rem</span> <span class="o">=</span> <span class="nx">docEl</span><span class="p">.</span><span class="nx">clientWidth</span> <span class="o">/</span> <span class="mi">10</span>
+    <span class="nx">docEl</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">fontSize</span> <span class="o">=</span> <span class="nx">rem</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span>
+<span class="p">}</span>
+<span class="nx">setRemUnit</span><span class="p">();</span>
+</code></pre></div>
+
+<p>rem 是相对于html节点的font-size来做计算的。所以在页面初始话的时候给根元素设置一个font-size，接下来的元素就根据rem来布局，这样就可以保证在页面大小变化时，布局可以自适应，</p>
+<p>如此我们只需要给设计稿的px转换成对应的rem单位即可</p>
+<p>当然，这个方案只是个过渡方案，为什么说是过渡方案</p>
+<p>因为当年viewport在低版本安卓设备上还有兼容问题，而vw，vh还没能实现所有浏览器兼容，所以flexible方案用rem来模拟vmin来实现在不同设备等比缩放的“通用”方案，之所以说是通用方案,是因为他这个方案是根据设备大小去判断页面的展示空间大小即屏幕大小，然后根据屏幕大小去百分百还原设计稿，从而让人看到的效果(展示范围)是一样的，这样一来，苹果5 和苹果6p屏幕如果你按照设计稿还原的话，字体大小实际上不一样，而人们在一样的距离上希望看到的大小其实是一样的，本质上，<strong>用户使用更大的屏幕，是想看到更多的内容，而不是更大的字</strong>。</p>
+<p>so，这个用缩放来解决问题的方案是个过渡方案，注定时代所淘汰</p>
+<h3 id="2vwvh">2、vw，vh布局<a class="headerlink" href="#2vwvh" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>vh、vw方案即将视觉视口宽度 window.innerWidth和视觉视口高度 window.innerHeight 等分为 100 份。</p>
+</blockquote>
+<p><img alt="img" src="../../images/image-444s.png" /></p>
+<p>vh和vw方案和rem类似也是相当麻烦需要做单位转化，而且px转换成vw不一定能完全整除，因此有一定的像素差。</p>
+<p>不过在工程化的今天，webpack解析css 的时候用postcss-loader 有个postcss-px-to-viewport能自动实现px到vw的转化</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="err">loader:</span> <span class="err">&#39;postcss-loader&#39;,</span>
+    <span class="err">options:</span> <span class="err">{</span>
+        <span class="err">plugins:</span> <span class="err">()=&gt;[</span>
+            <span class="err">require(&#39;autoprefixer&#39;)({</span>
+                <span class="err">browsers:</span> <span class="err">[&#39;last</span> <span class="err">5</span> <span class="err">versions&#39;]</span>
+            <span class="p">}</span><span class="err">),</span>
+            <span class="err">require(&#39;postcss-px-to-viewport&#39;)(</span><span class="p">{</span>
+                <span class="err">viewportWidth:</span> <span class="err">375,</span> <span class="err">//视口宽度（数字)</span>
+                <span class="err">viewportHeight:</span> <span class="err">1334,</span> <span class="err">//视口高度（数字）</span>
+                <span class="err">unitPrecision:</span> <span class="err">3,</span> <span class="err">//设置的保留小数位数（数字）</span>
+                <span class="err">viewportUnit:</span> <span class="err">&#39;vw&#39;,</span> <span class="err">//设置要转换的单位（字符串）</span>
+                <span class="err">selectorBlackList:</span> <span class="err">[&#39;.ignore&#39;,</span> <span class="err">&#39;.hairlines&#39;],</span> <span class="err">//不需要进行转换的类名（数组）</span>
+                <span class="err">minPixelValue:</span> <span class="err">1,</span> <span class="err">//设置要替换的最小像素值（数字）</span>
+                <span class="err">mediaQuery:</span> <span class="err">false</span> <span class="err">//允许在媒体查询中转换px（true/false）</span>
+            <span class="p">}</span><span class="err">)</span>
+        <span class="err">]</span>
+<span class="err">}</span>
+</code></pre></div>
+
+<h3 id="3pxvxvxxxvwvhvmaxvminflex">3、px为主，vx和vxxx（vw/vh/vmax/vmin）为辅，搭配一些flex（推荐）<a class="headerlink" href="#3pxvxvxxxvwvhvmaxvminflex" title="Permanent link">&para;</a></h3>
+<p>之所以推荐使用此种方案，是由于我们要去考虑用户的需求，<strong>用户之所以去买大屏手机，不是为了看到更大的字，而是为了看到更多的内容</strong>，这样直接使用px是最明智的方案，使用vw，rem等布局手段无可厚非，但是，flex这种弹性布局大行其道的今天，如果如果还用这种传统的思维去想问题显然是有两个原因（个人认为px是最好的，可能有大佬，能用vw，或者rem写出精妙的布局，也说不准）：</p>
+<p><strong>1、为了偷懒，不愿意去做每个手机的适</strong></p>
+<p><strong>2、不愿意去学习新的布局方式，让flex等先进的布局和你擦肩而过</strong></p>
+<h2 id="_13">移动端适配流程<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p><strong>1. 在head 设置width=device-width的viewport</strong>‘</p>
+<p><strong>2. 在css中使用px</strong></p>
+<p><strong>3. 在适当的场景使用flex布局，或者配合vw进行自适应</strong></p>
+<p><strong>4. 在跨设备类型的时候（pc &lt;-&gt; 手机 &lt;-&gt; 平板）使用媒体查询</strong></p>
+<p><strong>5. 在跨设备类型如果交互差异太大的情况，考虑分开项目开发</strong></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="">
+        
+          <a href="../px%E8%BD%ACvw%E5%92%8Cvh%E7%9A%84%E5%B7%A5%E5%85%B7/" title="5. px转vw和vh的工具" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                5. px转vw和vh的工具
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../api/usermanger_api/" title="1. 后台中心api文档" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                1. 后台中心api文档
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © 2020 雨果学院wiki
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../assets/js/jquery-1.11.3.min.js"></script>
+      
+        <script src="../../assets/js/simple-lightbox.min.js"></script>
+      
+        <script src="../../assets/js/custom.js"></script>
+      
+    
+  </body>
+</html>
