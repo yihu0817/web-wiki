@@ -1,0 +1,1083 @@
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="web前端开发wiki">
+      
+      
+        <link rel="canonical" href="https://www.yuguoxy.com/web/rem%E5%8D%95%E4%BD%8D%E8%87%AA%E9%80%82%E5%BA%94%E5%B1%8F%E5%B9%95/">
+      
+      
+        <meta name="author" content="zhousir">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.1">
+    
+    
+      
+        <title>2. rem单位详解 - web前端开发</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a676eddb.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.b302131d.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#546e7a">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700%7CUbuntu+Mono&display=fallback">
+        <style>body,input{font-family:"Ubuntu",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../assets/css/simplelightbox.min.css">
+    
+      <link rel="stylesheet" href="../../assets/css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="" data-md-color-primary="blue-grey" data-md-color-accent="pink">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rem" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="">
+    <a href="https://www.yuguoxy.com/" title="web前端开发" class="md-header-nav__button md-logo" aria-label="web前端开发">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            web前端开发
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              2. rem单位详解
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../.." class="md-tabs__link">
+          介绍
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tools/markdown%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="md-tabs__link">
+          markdown&git
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../vue/vue%E7%AE%80%E4%BB%8B/" class="md-tabs__link">
+          vue框架
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Web%E5%AE%89%E5%85%A8/" class="md-tabs__link">
+          web技术
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../%E9%A1%B5%E9%9D%A2%E5%8D%95%E4%BD%8D%E5%B0%8F%E7%BB%93/" class="md-tabs__link md-tabs__link--active">
+          屏幕适配方案
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../api/usermanger_api/" class="md-tabs__link">
+          api接口文档
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://www.yuguoxy.com/" title="web前端开发" class="md-nav__button md-logo" aria-label="web前端开发">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    web前端开发
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      介绍
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="介绍" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        介绍
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="1. 平台介绍" class="md-nav__link">
+      1. 平台介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/00web%E5%89%8D%E7%AB%AF%E4%BB%8B%E7%BB%8D/" title="2. web前端介绍" class="md-nav__link">
+      2. web前端介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../html/01html%E5%9F%BA%E7%A1%80/" title="3. html基础" class="md-nav__link">
+      3. html基础
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      markdown&git
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="markdown&git" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        markdown&git
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tools/markdown%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" title="1. markdown使用教程" class="md-nav__link">
+      1. markdown使用教程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tools/git%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" title="2. git使用教程" class="md-nav__link">
+      2. git使用教程
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      vue框架
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="vue框架" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        vue框架
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vue/vue%E7%AE%80%E4%BB%8B/" title="1. vue简介" class="md-nav__link">
+      1. vue简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vue/vue%E5%AE%89%E8%A3%85/" title="2. vue安装" class="md-nav__link">
+      2. vue安装
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      web技术
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="web技术" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        web技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Web%E5%AE%89%E5%85%A8/" title="1. web安全" class="md-nav__link">
+      1. web安全
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E6%97%A0%E9%99%90%E4%B8%8B%E6%8B%89%E6%96%B9%E6%A1%88/" title="2. 无限下拉方案" class="md-nav__link">
+      2. 无限下拉方案
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../css%E5%8F%98%E9%87%8F%E6%95%99%E7%A8%8B/" title="3. css变量" class="md-nav__link">
+      3. css变量
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      屏幕适配方案
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="屏幕适配方案" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        屏幕适配方案
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E9%A1%B5%E9%9D%A2%E5%8D%95%E4%BD%8D%E5%B0%8F%E7%BB%93/" title="1. pt单位" class="md-nav__link">
+      1. pt单位
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        2. rem单位详解
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="2. rem单位详解" class="md-nav__link md-nav__link--active">
+      2. rem单位详解
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-rem" class="md-nav__link">
+    1. rem是什么？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2rem62510px" class="md-nav__link">
+    2.为了容易计算rem的值，将根元素设置为62.5%(10px)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3.如何适配各种设备屏幕
+  </a>
+  
+    <nav class="md-nav" aria-label="3.如何适配各种设备屏幕">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-remjs" class="md-nav__link">
+    3.1 解决方案 rem.js 来解决适配问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-pxrem" class="md-nav__link">
+    3.2 px自动转换为rem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4vue-rem" class="md-nav__link">
+    4.vue 中使用rem布局
+  </a>
+  
+    <nav class="md-nav" aria-label="4.vue 中使用rem布局">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    4.1 另一种写法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E4%BD%BF%E7%94%A8Flexible%E5%AE%9E%E7%8E%B0%E6%89%8B%E6%B7%98H5%E9%A1%B5%E9%9D%A2%E7%9A%84%E7%BB%88%E7%AB%AF%E9%80%82%E9%85%8D/" title="3. 手淘H5页面的终端适配" class="md-nav__link">
+      3. 手淘H5页面的终端适配
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E6%9C%80%E6%96%B0%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D%E6%96%B9%E6%A1%88/" title="4. 最新移动端适配方案" class="md-nav__link">
+      4. 最新移动端适配方案
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../px%E8%BD%ACvw%E5%92%8Cvh%E7%9A%84%E5%B7%A5%E5%85%B7/" title="5. px转vw和vh的工具" class="md-nav__link">
+      5. px转vw和vh的工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E4%BD%A0%E4%BA%86%E8%A7%A3%E8%BF%87%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D%E5%90%97/" title="6. 你了解过移动端适配吗" class="md-nav__link">
+      6. 你了解过移动端适配吗
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      api接口文档
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="api接口文档" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        api接口文档
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/usermanger_api/" title="1. 后台中心api文档" class="md-nav__link">
+      1. 后台中心api文档
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-rem" class="md-nav__link">
+    1. rem是什么？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2rem62510px" class="md-nav__link">
+    2.为了容易计算rem的值，将根元素设置为62.5%(10px)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3.如何适配各种设备屏幕
+  </a>
+  
+    <nav class="md-nav" aria-label="3.如何适配各种设备屏幕">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-remjs" class="md-nav__link">
+    3.1 解决方案 rem.js 来解决适配问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-pxrem" class="md-nav__link">
+    3.2 px自动转换为rem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4vue-rem" class="md-nav__link">
+    4.vue 中使用rem布局
+  </a>
+  
+    <nav class="md-nav" aria-label="4.vue 中使用rem布局">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    4.1 另一种写法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="rem">rem详解及屏幕自适应方法<a class="headerlink" href="#rem" title="Permanent link">&para;</a></h1>
+<h2 id="1-rem">1. rem是什么？<a class="headerlink" href="#1-rem" title="Permanent link">&para;</a></h2>
+<p>rem（font size of the root element）是指相对于根元素的字体大小的单位。简单的说它就是一个相对单位。看到rem大家一定会想起em单位，em（font size of the element）是指相对于父元素的字体大小的单位。它们之间其实很相似，只不过一个计算的规则是依赖根元素一个是依赖父元素计算。</p>
+<p><strong>兼容性</strong>
+目前，IE9+，Firefox、Chrome、Safari、Opera 的主流版本都支持了rem。</p>
+<p><strong>1rem等于多少px呢?</strong></p>
+<p>rem是相对根元素的字体大小单位，要知道1rem等于多少px，首先要知道根元素值；默认状态下，浏览器的默认文字大小为16px；所以1rem默认情况下就等于16px</p>
+<div class="highlight"><pre><span></span><code><span class="nt">html</span><span class="p">{</span>
+    <span class="k">font-size</span><span class="p">:</span><span class="mi">16</span><span class="kt">px</span><span class="p">;</span> <span class="err">//默认大小</span>
+<span class="p">}</span>
+<span class="nt">p</span> <span class="p">{</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="p">:</span><span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>要设置字体大小为18px用rem表示是多少呢?</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">p</span><span class="p">{</span>
+   <span class="k">font-size</span><span class="p">:</span><span class="mi">18</span><span class="kt">px</span><span class="p">;</span>
+   <span class="k">font-size</span><span class="p">:</span> <span class="mi">18</span><span class="o">/</span><span class="mi">16</span><span class="kt">rem</span><span class="p">;</span>  
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="2rem62510px">2.为了容易计算rem的值，将根元素设置为62.5%(10px)<a class="headerlink" href="#2rem62510px" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code> <span class="nt">html</span><span class="p">{</span>
+     <span class="k">font-size</span><span class="p">:</span><span class="mf">62.5</span><span class="kt">%</span><span class="p">;</span>
+     <span class="k">font-size</span><span class="p">:</span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span> <span class="err">//或者直接设置为10px</span>
+ <span class="p">}</span> 
+ <span class="nt">body</span><span class="p">{</span>
+     <span class="k">font-size</span><span class="p">:</span><span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+     <span class="k">font-size</span><span class="p">:</span><span class="mf">1.2</span><span class="kt">rem</span><span class="p">;</span>
+ <span class="p">}</span> 
+ <span class="nt">p</span><span class="p">{</span>
+     <span class="k">font-size</span><span class="p">:</span><span class="mi">14</span><span class="kt">px</span><span class="p">;</span>
+     <span class="k">font-size</span><span class="p">:</span><span class="mf">1.4</span><span class="kt">rem</span><span class="p">;</span>
+ <span class="p">}</span>
+</code></pre></div>
+
+<p>因为默认状态下，浏览器的默认文字大小为16px，16*0.625=10px，这样就有1rem=10px，用到数值就很容易计算。  例如需要20像素的宽度，则可以设置为width:2rem; 这样设置的好处是便于处理响应式布局，只需要根据需要调整根元素的font-size就可以直接对所有rem相对单位的属相关元素同时调整。 </p>
+<h2 id="3">3.如何适配各种设备屏幕<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>了解了 <strong>rem</strong> 的基本原理，我们来看看如何利用rem来完美适配各种设备屏幕。
+理想的适配是把设计稿直接等比缩放在设备上，这样在任何不同的屏幕上布局都会很完美，手淘就是用的 <strong>rem</strong> 来进行适配的。</p>
+<h3 id="31-remjs">3.1 解决方案 <a href="http://pan.baidu.com/s/1bpFOweN">rem.js</a> 来解决适配问题<a class="headerlink" href="#31-remjs" title="Permanent link">&para;</a></h3>
+<p>事实上 <a href="http://pan.baidu.com/s/1bpFOweN">rem.js</a> 是把屏幕等分成 <strong>20</strong> 份，每份为 <strong>1rem</strong> ， <strong>1rem</strong> 对应的大小就是 <strong>rem基准值</strong> ，<a href="http://pan.baidu.com/s/1bpFOweN">rem.js</a> 做的就是把 <strong>rem基准值</strong> 给<code>html</code>的 <strong>font-size</strong> ，所以如果设备的 <strong>物理像素</strong> 宽为 <strong>640px</strong>，那么 <strong>1rem=640px/20=32px</strong> , <code>html</code>的 <strong>font-size为32px</strong> 。</p>
+<p>因为 <a href="http://pan.baidu.com/s/1bpFOweN">rem.js</a> 是作用在``上，所以页面引入的时候最好是放在所有资源之前，例如：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge,chrome=1&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>rem自适应<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;description&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;keywords&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/rem.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/style.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>rem自适应！<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<hr />
+<div class="highlight"><pre><span></span><code><span class="cm">/* rem.js文件内容 */</span>
+<span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">html</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="nx">onWindowResize</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">html</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">fontSize</span> <span class="o">=</span> <span class="nx">html</span><span class="p">.</span><span class="nx">getBoundingClientRect</span><span class="p">().</span><span class="nx">width</span> <span class="o">/</span> <span class="mi">20</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;resize&#39;</span><span class="p">,</span> <span class="nx">onWindowResize</span><span class="p">);</span>
+    <span class="nx">onWindowResize</span><span class="p">();</span>
+<span class="p">})();</span>
+</code></pre></div>
+
+<p>在我们实际切图的时候，对于视觉稿上的元素尺寸换算，只需要元素的 <strong>原始的px值(即你量的大小)**除以 **rem基准值</strong> 即可。例如设计稿的大小为640px， <strong>rem基准值 = 640px/20 = 32px</strong> ，有个元素的大小你量出来是 <strong>140px*286px</strong> ，那么换算过来就是：</p>
+<ul>
+<li><code>140px = 140/32 = 4.375rem</code></li>
+<li><code>286px = 286/32 = 8.9375rem</code></li>
+</ul>
+<h3 id="32-pxrem">3.2 px自动转换为rem<a class="headerlink" href="#32-pxrem" title="Permanent link">&para;</a></h3>
+<p><strong>1. vscode插件: cssrem</strong></p>
+<div class="highlight"><pre><span></span><code>cssrem
+A px to rem plugin in VSCode
+</code></pre></div>
+
+<p><strong>2.配置默认根元素值，也就是rem基准值 1rem=?px , 默认1rem=16px</strong></p>
+<ol>
+<li>
+<p>打开vscode:  File-&gt;Preferences -&gt;Settings </p>
+</li>
+<li>
+<p>搜索 cssrem</p>
+</li>
+</ol>
+<p><img alt="image-20200428114453314" src="../../images/image-20200428114453314.png" /></p>
+<ol>
+<li>当vscode样式大小进插件会自动提示</li>
+</ol>
+<p><img alt="image-20200428114958179" src="../../images/image-20200428114958179.png" /></p>
+<h2 id="4vue-rem">4.vue 中使用rem布局<a class="headerlink" href="#4vue-rem" title="Permanent link">&para;</a></h2>
+<p>在用vue或react等工具搭建一个移动端项目时,怎样做到自适应呢? 当然选择rem布局比较方便快捷.
+ 此处已vue为例,在使用vue-cli搭建好项目框架后,在目录结构的index.html文件中添加一段js代码:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">fnResize</span><span class="p">();</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">onresize</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">fnResize</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">fnResize</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">deviceWidth</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">clientWidth</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">deviceWidth</span> <span class="o">&gt;=</span> <span class="mi">750</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">deviceWidth</span> <span class="o">=</span> <span class="mi">750</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">deviceWidth</span> <span class="o">&lt;=</span> <span class="mi">320</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">deviceWidth</span> <span class="o">=</span> <span class="mi">320</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">fontSize</span> <span class="o">=</span> <span class="p">(</span><span class="nx">deviceWidth</span> <span class="o">/</span> <span class="mf">7.5</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">;</span> 
+<span class="p">}</span>
+</code></pre></div>
+
+<p>然后在写css就可以将px单位换成rem.
+ 这里设置的比例是100px=1rem,
+ 例如:宽度为100px时,可以直接写成1rem</p>
+<h3 id="41">4.1 另一种写法<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="kd">var</span> <span class="nx">width</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">clientWidth</span>
+    <span class="kd">var</span> <span class="nx">css</span> <span class="o">=</span> <span class="sb">`</span>
+<span class="sb">        html{</span>
+<span class="sb">           font-size: </span><span class="si">${</span><span class="nx">width</span><span class="o">/</span><span class="mi">10</span><span class="si">}</span><span class="sb">px;</span>
+<span class="sb">        }</span>
+<span class="sb">        `</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="sb">`&lt;style&gt;</span><span class="si">${</span><span class="nx">css</span><span class="si">}</span><span class="sb">&lt;/style&gt;`</span><span class="p">)</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<h2 id="_1">参考<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.cnblogs.com/wangfajing/p/7201256.html">关于使用rem单位，calc()进行自适应布局</a></p>
+<p><a href="https://www.jianshu.com/p/6f81bdb1eeee">rem方案完美解决自适应</a> </p>
+<p><a href="https://juejin.im/entry/58f429165c497d006c93fa7d">rem 布局原理</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="">
+        
+          <a href="../%E9%A1%B5%E9%9D%A2%E5%8D%95%E4%BD%8D%E5%B0%8F%E7%BB%93/" title="1. pt单位" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                1. pt单位
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../%E4%BD%BF%E7%94%A8Flexible%E5%AE%9E%E7%8E%B0%E6%89%8B%E6%B7%98H5%E9%A1%B5%E9%9D%A2%E7%9A%84%E7%BB%88%E7%AB%AF%E9%80%82%E9%85%8D/" title="3. 手淘H5页面的终端适配" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                3. 手淘H5页面的终端适配
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © 2020 雨果学院wiki
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../assets/js/jquery-1.11.3.min.js"></script>
+      
+        <script src="../../assets/js/simple-lightbox.min.js"></script>
+      
+        <script src="../../assets/js/custom.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1308 @@
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="web前端开发wiki">
+      
+      
+        <link rel="canonical" href="https://www.yuguoxy.com/html/01html%E5%9F%BA%E7%A1%80/">
+      
+      
+        <meta name="author" content="zhousir">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.1">
+    
+    
+      
+        <title>3. html基础 - web前端开发</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a676eddb.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.b302131d.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#546e7a">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700%7CUbuntu+Mono&display=fallback">
+        <style>body,input{font-family:"Ubuntu",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../assets/css/simplelightbox.min.css">
+    
+      <link rel="stylesheet" href="../../assets/css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="" data-md-color-primary="blue-grey" data-md-color-accent="pink">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#html" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="">
+    <a href="https://www.yuguoxy.com/" title="web前端开发" class="md-header-nav__button md-logo" aria-label="web前端开发">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            web前端开发
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              3. html基础
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../.." class="md-tabs__link md-tabs__link--active">
+          介绍
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tools/markdown%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="md-tabs__link">
+          markdown&git
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../vue/vue%E7%AE%80%E4%BB%8B/" class="md-tabs__link">
+          vue框架
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../web/Web%E5%AE%89%E5%85%A8/" class="md-tabs__link">
+          web技术
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../web/%E9%A1%B5%E9%9D%A2%E5%8D%95%E4%BD%8D%E5%B0%8F%E7%BB%93/" class="md-tabs__link">
+          屏幕适配方案
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../api/usermanger_api/" class="md-tabs__link">
+          api接口文档
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://www.yuguoxy.com/" title="web前端开发" class="md-nav__button md-logo" aria-label="web前端开发">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    web前端开发
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+    
+    <label class="md-nav__link" for="nav-1">
+      介绍
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="介绍" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        介绍
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="1. 平台介绍" class="md-nav__link">
+      1. 平台介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../00web%E5%89%8D%E7%AB%AF%E4%BB%8B%E7%BB%8D/" title="2. web前端介绍" class="md-nav__link">
+      2. web前端介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        3. html基础
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="3. html基础" class="md-nav__link md-nav__link--active">
+      3. html基础
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1html" class="md-nav__link">
+    1、HTML是什么
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2、网站开发工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3html" class="md-nav__link">
+    3、HTML基本结构
+  </a>
+  
+    <nav class="md-nav" aria-label="3、HTML基本结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31html" class="md-nav__link">
+    3.1、HTML基本结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2、用记事本编写网页
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-head" class="md-nav__link">
+    4. head标签
+  </a>
+  
+    <nav class="md-nav" aria-label="4. head标签">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41headtitle" class="md-nav__link">
+    4.1、head标签内的title标签
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42headmeta" class="md-nav__link">
+    4.2、head标签内的meta标签
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43headstyle" class="md-nav__link">
+    4.3、head标签内的style标签
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44headscript" class="md-nav__link">
+    4.4、head标签内的script标签
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45headlink" class="md-nav__link">
+    4.5、head标签内的link标签
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46headbase" class="md-nav__link">
+    4.6、head标签内的base标签
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5.其它标签
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      markdown&git
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="markdown&git" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        markdown&git
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tools/markdown%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" title="1. markdown使用教程" class="md-nav__link">
+      1. markdown使用教程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tools/git%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" title="2. git使用教程" class="md-nav__link">
+      2. git使用教程
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      vue框架
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="vue框架" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        vue框架
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vue/vue%E7%AE%80%E4%BB%8B/" title="1. vue简介" class="md-nav__link">
+      1. vue简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vue/vue%E5%AE%89%E8%A3%85/" title="2. vue安装" class="md-nav__link">
+      2. vue安装
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      web技术
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="web技术" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        web技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../web/Web%E5%AE%89%E5%85%A8/" title="1. web安全" class="md-nav__link">
+      1. web安全
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../web/%E6%97%A0%E9%99%90%E4%B8%8B%E6%8B%89%E6%96%B9%E6%A1%88/" title="2. 无限下拉方案" class="md-nav__link">
+      2. 无限下拉方案
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../web/css%E5%8F%98%E9%87%8F%E6%95%99%E7%A8%8B/" title="3. css变量" class="md-nav__link">
+      3. css变量
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      屏幕适配方案
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="屏幕适配方案" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        屏幕适配方案
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../web/%E9%A1%B5%E9%9D%A2%E5%8D%95%E4%BD%8D%E5%B0%8F%E7%BB%93/" title="1. pt单位" class="md-nav__link">
+      1. pt单位
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../web/rem%E5%8D%95%E4%BD%8D%E8%87%AA%E9%80%82%E5%BA%94%E5%B1%8F%E5%B9%95/" title="2. rem单位详解" class="md-nav__link">
+      2. rem单位详解
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../web/%E4%BD%BF%E7%94%A8Flexible%E5%AE%9E%E7%8E%B0%E6%89%8B%E6%B7%98H5%E9%A1%B5%E9%9D%A2%E7%9A%84%E7%BB%88%E7%AB%AF%E9%80%82%E9%85%8D/" title="3. 手淘H5页面的终端适配" class="md-nav__link">
+      3. 手淘H5页面的终端适配
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../web/%E6%9C%80%E6%96%B0%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D%E6%96%B9%E6%A1%88/" title="4. 最新移动端适配方案" class="md-nav__link">
+      4. 最新移动端适配方案
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../web/px%E8%BD%ACvw%E5%92%8Cvh%E7%9A%84%E5%B7%A5%E5%85%B7/" title="5. px转vw和vh的工具" class="md-nav__link">
+      5. px转vw和vh的工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../web/%E4%BD%A0%E4%BA%86%E8%A7%A3%E8%BF%87%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D%E5%90%97/" title="6. 你了解过移动端适配吗" class="md-nav__link">
+      6. 你了解过移动端适配吗
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      api接口文档
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="api接口文档" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        api接口文档
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/usermanger_api/" title="1. 后台中心api文档" class="md-nav__link">
+      1. 后台中心api文档
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1html" class="md-nav__link">
+    1、HTML是什么
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2、网站开发工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3html" class="md-nav__link">
+    3、HTML基本结构
+  </a>
+  
+    <nav class="md-nav" aria-label="3、HTML基本结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31html" class="md-nav__link">
+    3.1、HTML基本结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2、用记事本编写网页
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-head" class="md-nav__link">
+    4. head标签
+  </a>
+  
+    <nav class="md-nav" aria-label="4. head标签">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41headtitle" class="md-nav__link">
+    4.1、head标签内的title标签
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42headmeta" class="md-nav__link">
+    4.2、head标签内的meta标签
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43headstyle" class="md-nav__link">
+    4.3、head标签内的style标签
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44headscript" class="md-nav__link">
+    4.4、head标签内的script标签
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45headlink" class="md-nav__link">
+    4.5、head标签内的link标签
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46headbase" class="md-nav__link">
+    4.6、head标签内的base标签
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5.其它标签
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="html">HTML基础<a class="headerlink" href="#html" title="Permanent link">&para;</a></h1>
+<h2 id="1html">1、HTML是什么<a class="headerlink" href="#1html" title="Permanent link">&para;</a></h2>
+<p>HTML，全称“Hyper Text Markup Language（超文本标记语言）”，它是制作万维网页面的标准语言。</p>
+<p>HTML不是一门编程语言，而是一门描述性的标记语言。HTML最基本的语法如下：</p>
+<div class="highlight"><pre><span></span><code>&lt;标签符&gt;内容&lt;/标签符&gt;
+</code></pre></div>
+
+<p>标签符一般都是成对出现，有一个开始符号和一个结束符号，结束符号只是在开头符号的前面加一个斜杠“/”。当浏览器收到HTML文本后，就会解释里面的标签符，然后把标签符相对应的功能表达出来。</p>
+<p>例如，用<em></em>标签对来定义文字为斜体字，用<strong></strong>来定义文字为粗体。当浏览器遇到标签对时，就会把标签中所有文字用斜体显示出来。</p>
+<div class="highlight"><pre><span></span><code>&lt;em&gt;雨果学院&lt;/em&gt;
+</code></pre></div>
+
+<p>当浏览器遇到上面这行代码时，会得到如下斜体文字效果：</p>
+<p><img alt="image-20200427172211862" src="../images/image-20200427172211862.png" /></p>
+<p>HTML要学习什么呢？用一句很简单易懂的话来说， 学习HTML就是学习各种标签，就是学习网页的“骨架”。标签有文字标签、图像标签、音频标签、表单标签等等。因为HTML这门语言就是一门描述性语言，就是用标签来说话。举个例子，如果你要在浏览器显示一段文字，你就用到**段落标签p**，如果你要在浏览器显示一张图像，就要用到[图像标签**img**。针对对象不同，使用的标签不同。假如你想要在浏览器显示一张图片，你用段落标签p就不可能将图片显示出来。所以，学习HTML说白了就是学习各种各样的标签，然后针对你想要显示的内容来使用相应的标签，在对的地方用对标签。</p>
+<p>此外，很多时候我们也把“标签”说成“元素”，例如“p标签”说成“p元素”，这说的是一个意思，只是叫法不同而已。而“标签”的叫法更形象地说明了HTML元素是用来“标记”的，来标记这是一段文字还是一张图片，从而让浏览器将你的代码解析出来而展示给用户看。</p>
+<p><strong>总结</strong></p>
+<p>1、学习HTML就是学习各种标签，然后针对你想要的内容来使用相应的标签；</p>
+<p>2、HTML标签即“HTML元素”；</p>
+<h2 id="2">2、网站开发工具<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>根据个人经历，比较好的网页开发工具有Visual Studio、Hbuilder、Dreamweaver和Subline Text。</p>
+<p>Microsoft Visual Studio（简称VS）是微软公司的开发工具包系列产品，是目前最流行的Windows平台应用程序的集成开发环境（IDE）。所谓的集成开发环境，就是指用于提供程序开发环境的应用程序，一般包括代码编辑器、编译器、调试器和图形用户界面工具。这么复杂，谁看得懂呀？哎，简单来说，Visual Studio是一个很多用途的开发工具，它可以用来开发功能很强大的网站。这下懂了吗？</p>
+<p>相对于Dreamweaver，Viusal Studio看起来是一个“庞然大物”，挺复杂的。为什么非要选择Viusal Studio作为本教程的开发工具呢？这些都是为了后续课程的需要，如果我们刚刚开始就选择Dreamweaver作为开发工具，很多同学就跑去借一本Dreamweaver的书去学了，Dreamweaver的那种传统的使用界面操作的开发方式，已经被摒弃很久了，但是不知道为毛还有那么多人出版。本人当初刚刚接触网页开发的时候，也深受其害，当时跟着一个视频在学着第一步点击那里，第二步点击那里……点点点，全部是用鼠标来点，点到我头都晕了。</p>
+<p>大家不要觉得Dreamweaver的用鼠标操作的方式来制作网页很简单方便，学了一段时间，你会发现你学到的不是知识，而是学到了制作网页的过程中应该点哪里！还有，当你用Dreamweaver鼠标操作的方式来制作网页时，你会发现，弊端何其多呼！特别是冗余代码一堆一堆，让制作出来的网站在后期难以维护。</p>
+<p>当然，Dreamweaver还是挺不错的一个开发工具，并非反对大家使用Dreamweaver，而是反对大家使用Dreamweaver界面操作的方式来制作网页。对于刚刚接触网页开发的新手来说，可以使用Dreamweaver作为开发工具，不过本人强烈建议你一定要用代码去写网页，别用鼠标点击的方式去制作网页。还有我可以很清楚地告诉你，现在大部分网站都不是鼠标操作去制作网页的，而是编写代码去制作网页。哪怕人家用Dreamweaver开发，都不会采用鼠标点击的方式。</p>
+<p>如果仅仅是开发前端的话，不一定要使用Visual Studio，Dreamweaver、Hbuilder等开发工具也是非常不错的</p>
+<p>如果你是新手建议使用nodepad++手写一周代码，这样基础会更牢靠。</p>
+<p><strong>总结</strong> </p>
+<p>常用前端开发工具</p>
+<ol>
+<li>Visual Studio</li>
+<li>Hbuilder</li>
+<li>Subline Text</li>
+<li>webstom</li>
+<li>nodepad++</li>
+<li>Dreamweaver</li>
+</ol>
+<h2 id="3html">3、HTML基本结构<a class="headerlink" href="#3html" title="Permanent link">&para;</a></h2>
+<h3 id="31html">3.1、HTML基本结构<a class="headerlink" href="#31html" title="Permanent link">&para;</a></h3>
+<p>我们下面通过一张图来说明HTML的基本结构：</p>
+<p><img alt="HTML基本结构" src="../images/3-1-1.png" /></p>
+<p>一个HTML文档由4个基本部分组成：</p>
+<ul>
+<li><code>一个文档声明：&lt;!DOCTYPE HTML&gt;</code></li>
+<li><code>一个html标签对：&lt;html&gt;&lt;/html&gt;</code></li>
+<li><code>一个head标签对：&lt;head&gt;&lt;/head&gt;</code></li>
+<li><code>一个body标签对：&lt;body&gt;&lt;/body&gt;</code></li>
+</ul>
+<p>大家都看到了吧，所谓的HTML就是一对对的标签（也有例外）。我们简单说一下这几个基本标签的作用：</p>
+<p>1、文档声明</p>
+<!DOCTYPE HTML>声明这是一个HTML文档。
+2、<HTML>标签
+
+<p><html>标签的作用相当于设计者在告诉浏览器，整个网页是从<html>这里开始的，然后到</html>结束。</p>
+<p>对于<html>这个标签，我们经常看到这样一句代码：</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/1999/xhtml&quot;</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>其实上面这句代码声明了该网页使用的是W3C组织的XHTML标准。</p>
+<p>3、<head>标签</p>
+<p>head标签是页面的“头部”，只能定义一些特殊的内容。</p>
+<p>4、<body>标签</p>
+<p>body标签是页面的“身体”，一般网页绝大多数的标签代码都是在这里编写。</p>
+<p>在此说明一下：</p>
+<ul>
+<li>（1）对于HTML的基本结构，你至少要默写出来，这些都要记忆。</li>
+<li>（2）记忆标签小技巧：根据标签字母意思就很容易记忆了，比如<head>表示“页头”，<body>表示“页身”。</li>
+</ul>
+<h3 id="32">3.2、用记事本编写网页<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<p><strong>第一步</strong>：新建“记事本”，把下面这段代码复制到记事本中去，然后保存，将记事本名字改为“我的第一个网页”。</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>这是网页的标题<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>    
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这是网页的内容<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>       
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p><strong>第二步</strong>：将记事本后缀名“.txt”改为“.html”：</p>
+<p><img alt="用记事本编写HTML" src="../images/3-1-2.png" /></p>
+<p><strong>第三步</strong>：点击“我的第一个网页.html”这个HTML文件，就可以在浏览器打开了。</p>
+<p><img alt="用记事本编写HTM" src="../images/3-1-3.png" /></p>
+<p>在这里说明一下：</p>
+<div class="highlight"><pre><span></span><code>&lt;title&gt;标签是&lt;head&gt;标签的内部标签，这里定义的是网页的标题内容，这个标题不是文章的标题，而是在浏览器显示的那个标题；
+&lt;p&gt;标签是段落标签，可以定义一段文字内容，我们在后面会讲到这些标签的具体用法，在这里只需要读者了解一下即可。
+</code></pre></div>
+
+<h2 id="4-head">4. head标签<a class="headerlink" href="#4-head" title="Permanent link">&para;</a></h2>
+<p>这一节课可能比较抽象，对于初学者也缺乏实操性，因为这几个标签一般都是“前端学习中期”或者“建站时期”才用得到，一般读者在刚刚接触HTML的过程中，实际用到并不多。但是为什么要在课程初给大家讲解<head>标签呢？这也是让大家有一个很流畅的学习思路，先把“页头”学了，然后再学“页身”。这一小节大家如果只需要记得<head>标签的内部标签有什么，都有什么用就足够了，如果你实在记不住，至少也要有个大概印象。等到我们把整一套前端教程学完，我们再回过头来看这一节，我们会受益匪浅的。</p>
+<p>一般来说，只有6个标签能放在<head>标签内：</p>
+<div class="highlight"><pre><span></span><code>① <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>；
+
+② <span class="p">&lt;</span><span class="nt">meta</span><span class="p">&gt;</span>；
+
+③ <span class="p">&lt;</span><span class="nt">link</span><span class="p">&gt;</span>；
+
+④ <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="err">；</span>
+
+⑤ <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+
+⑥ <span class="p">&lt;</span><span class="nt">base</span><span class="p">&gt;</span>；
+</code></pre></div>
+
+<h4 id="41headtitle">4.1、head标签内的title标签<a class="headerlink" href="#41headtitle" title="Permanent link">&para;</a></h4>
+<p>在上一节我们知道，title标签唯一的作用就是定义网页的标题，标题的内容都是放在title标签内，如本节课页面标题是：</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>HTML head标签_HTML入门教程<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>大家在浏览器可以看到本页的标题效果</p>
+<h4 id="42headmeta">4.2、head标签内的meta标签<a class="headerlink" href="#42headmeta" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span><span class="p">&gt;</span>标签又叫“元信息标签”，是<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>标签内的一个辅助性标签。<span class="p">&lt;</span><span class="nt">meta</span><span class="p">&gt;</span>标签提供的信息不显示在页面中，一般用来定义页面的关键字、页面的描述等，以方便搜索引擎蜘蛛（如百度蜘蛛、谷歌蜘蛛）来搜索到你这个页面的信息。通俗点说，meta标签就是用来告诉“搜索蜘蛛”这个页面是干嘛的。
+</code></pre></div>
+
+<p>在互联网中，我们一般很形象地称搜索引擎为“搜索蜘蛛”或“搜索机器人”。</p>
+<p>meta标签有两个重要的属性name和http-equiv。</p>
+<p><strong>1、meta标签name属性</strong></p>
+<p>我们先看一个实例：</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>    
+    <span class="c">&lt;!--网页关键字--&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span>  <span class="na">name</span><span class="o">=</span><span class="s">&quot;keywords&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;雨果学院&quot;</span><span class="p">/&gt;</span>
+    <span class="c">&lt;!--网页描述--&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span>  <span class="na">name</span><span class="o">=</span><span class="s">&quot;description&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;一个富有活力的技术学习网站&quot;</span><span class="p">/&gt;</span>
+    <span class="c">&lt;!--本页作者--&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span>  <span class="na">name</span><span class="o">=</span><span class="s">&quot;author&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;yuguoxy&quot;</span><span class="p">&gt;</span>
+    <span class="c">&lt;!--版权声明--&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span>  <span class="na">name</span><span class="o">=</span><span class="s">&quot;copyright&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;本站所有教程均为原创，版权所有，禁止转载。否则将追究法律责任。&quot;</span><span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>下面我们来总结一下meta标签name属性的主要属性值：</p>
+<table>
+<thead>
+<tr>
+<th align="left">name属性值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">keywords</td>
+<td align="left">网页的关键字（关键字可以是多个，而不仅仅是一个）</td>
+</tr>
+<tr>
+<td align="left">description</td>
+<td align="left">网页的描述</td>
+</tr>
+<tr>
+<td align="left">author</td>
+<td align="left">网页的作者</td>
+</tr>
+<tr>
+<td align="left">copyright</td>
+<td align="left">版权信息</td>
+</tr>
+</tbody>
+</table>
+<p>上面只是列举了最常用的meta标签的name属性值，而name属性值远远不止以上那几个，对于初学者，我们仅仅了解上面几个就完全足够了。</p>
+<p><strong>2、meta标签http-equiv属性</strong></p>
+<p>学习meta标签的http-equiv属性，我们只需要了解它的两个作用就行了：</p>
+<p>一，定义页面所使用的语言</p>
+<p>二，实现页面的自动刷新跳转</p>
+<p><strong>（1）定义页面所使用的语言</strong></p>
+<p>语法：</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span>  <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;content-type&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;text/html; charset=gb2312&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>说明：</p>
+<p>这段代码告诉浏览器该页面所使用的字符集是gb2312，即国际汉字码。我们不需要记住，只需要了解就行了。</p>
+<p><strong>（2）页面自动跳转</strong></p>
+<p>语法：</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span>  <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;refresh&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;6;url=http:/www.baidu.com&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>举例：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span> 
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/1999/xhtml&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span>  <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;refresh&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;6;url=http://www.baidu.com&quot;</span><span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这个页面在6秒之后自动跳转到百度首页<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span><span class="p">&gt;</span>标签对于一般页面制作者来说，实际意义不大，在前期过程中我们几乎涉及不到，只有在整站设计开发的实战中，我们才会用到非常多的meta标签属性。读者只需要了解meta标签的基本功能就行了，哪怕代码不会写都没关系，以后不会再回过头来看就行了。
+</code></pre></div>
+
+<h4 id="43headstyle">4.3、head标签内的style标签<a class="headerlink" href="#43headstyle" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>标签内的<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="err">标签用于定义元素的CSS样式。在“[CSS入门课程](http://www.yuguoxy.com/les_cj/css_list.aspx)”我们会详细给大家介绍，在“[HTML入门教程](http://www.yuguoxy.com/les_hj/html_list.aspx)”中我们不需要深入探究。</span>
+</code></pre></div>
+
+<p>语法：</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span>
+        <span class="o">&lt;!</span><span class="nt">--这里写CSS样式--</span><span class="o">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>举例：</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span>
+        <span class="nt">div</span>
+        <span class="p">{</span>
+            <span class="k">font-size</span><span class="p">:</span><span class="mi">14</span><span class="kt">px</span><span class="p">;</span>
+            <span class="k">color</span><span class="p">:</span><span class="kc">red</span><span class="p">;</span>
+            <span class="k">border</span><span class="p">:</span><span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">gray</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<h4 id="44headscript">4.4、head标签内的script标签<a class="headerlink" href="#44headscript" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>标签内的<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="err">标签用于定义页面的脚本。在“[jQuery入门教程](http://www.lvyestudy.com/les_jj/jQuery_list.aspx)”我们会详细给大家介绍，在“HTML入门教程”中我们不需要深入探究。</span>
+</code></pre></div>
+
+<p>语法：</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;HTML入门教程！&quot;</span><span class="p">);</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<h4 id="45headlink">4.5、head标签内的link标签<a class="headerlink" href="#45headlink" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>标签内的<span class="p">&lt;</span><span class="nt">link</span><span class="p">&gt;</span>标签用于外部文件的链接，一般用于链接外部CSS样式表文件和JS文件。<span class="p">&lt;</span><span class="nt">link</span><span class="p">&gt;</span>标签是属于“CSS入门课程”的内容，在“HTML入门教程”中我们不需要深入探究。
+</code></pre></div>
+
+<p>语法：</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span>  <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span>  <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span>  <span class="na">title</span><span class="o">=</span><span class="s">&quot;temp&quot;</span>  <span class="na">href</span><span class="o">=</span><span class="s">&quot;/temp.css/&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<h4 id="46headbase">4.6、head标签内的base标签<a class="headerlink" href="#46headbase" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>标签内的<span class="p">&lt;</span><span class="nt">base</span><span class="p">&gt;</span>标签为整个页面定义所有链接的基础定位，其主要的作用是为了确保文档中所有的相对URL，都可以被分解成正确的文档地址，使在文档本身被移动或重命名的情况下也可以正确解析。
+</code></pre></div>
+
+<p>语法：</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">base</span>  <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://yuguoxy.com&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p><base>标签经常使用在创建文档集合中，为了不破坏文档中任何链接，使用者通过在每个文档中放置正确的<base>标签，便可以再目录甚至服务器之间移动整个文档集合。</p>
+<div class="highlight"><pre><span></span><code>&lt;base&gt;标签用得非常少，可以几乎忽略。
+</code></pre></div>
+
+<p><strong>总结</strong></p>
+<p>1、head标签内部标签</p>
+<table>
+<thead>
+<tr>
+<th align="left">head内部标签</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">title</td>
+<td align="left">定义网页的标题</td>
+</tr>
+<tr>
+<td align="left">meta</td>
+<td align="left">定义网页的基本信息（供搜索引擎）</td>
+</tr>
+<tr>
+<td align="left">style</td>
+<td align="left">定义CSS样式</td>
+</tr>
+<tr>
+<td align="left">link</td>
+<td align="left">链接外部CSS文件或脚本文件</td>
+</tr>
+<tr>
+<td align="left">script</td>
+<td align="left">定义脚本语言</td>
+</tr>
+<tr>
+<td align="left">base</td>
+<td align="left">定义页面所有链接的基础定位</td>
+</tr>
+</tbody>
+</table>
+<p>这些标签不记住没关系，感性认知即可。以后在碰到的时候至少要有一个印象。</p>
+<h2 id="5">5.其它标签<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="">
+        
+          <a href="../00web%E5%89%8D%E7%AB%AF%E4%BB%8B%E7%BB%8D/" title="2. web前端介绍" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                2. web前端介绍
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../tools/markdown%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" title="1. markdown使用教程" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                1. markdown使用教程
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © 2020 雨果学院wiki
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../assets/js/jquery-1.11.3.min.js"></script>
+      
+        <script src="../../assets/js/simple-lightbox.min.js"></script>
+      
+        <script src="../../assets/js/custom.js"></script>
+      
+    
+  </body>
+</html>
